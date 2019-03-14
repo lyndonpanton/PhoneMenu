@@ -16,7 +16,7 @@ html, body {
 }
 
 #contacts {
-	height: 80%;
+	height: 86%;
 	background-color: #FCFCFC;
 }
 
@@ -38,7 +38,7 @@ html, body {
 #phone-nav {
 	display: flex;
 	flex-wrap: wrap;
-	height: 8%;
+	height: 3%;
 	align-items: center;
 	justify-content: space-around;
 	border-top: 1px #DDDDDD solid;
