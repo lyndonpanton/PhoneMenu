@@ -1,3 +1,7 @@
+:root {
+	font-family: 'Roboto', sans-serif;
+}
+
 .nav-item {
 	/*list-style-type: none;*/
 }
@@ -8,4 +12,5 @@
 	align-items: center;
 	justify-content: space-around;
 	list-style-type: none;
+	font-weight: 400;
 }
