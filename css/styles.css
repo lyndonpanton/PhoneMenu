@@ -15,6 +15,11 @@ html, body {
 	border-left: none;
 }
 
+.form-input:focus {
+	outline: none;
+	border-bottom-color: hsla(208, 100%, 50%, 1);
+}
+
 .nav-item {
 	/*list-style-type: none;*/
 }
