@@ -40,7 +40,10 @@ html, body {
 }
 
 #add-contact:active {
-
+	outline: none;
+	border-color: hsla(208, 100%, 50%, 1);
+	background-color: #00BB00;
+	color: #FFFFFF;
 }
 
 #add-contact:focus {
