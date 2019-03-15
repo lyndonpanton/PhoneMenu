@@ -13,6 +13,19 @@ let contactForm = document.getElementById("form-contact");
 contactForm.addEventListener("submit", function(e) {
 	e.preventDefault();
 
+	// Remember to add validation for input elements ///////////////////////////
+	let formFirstName = document.getElementById("form-firstname").value;
+	let formSurname = document.getElementById("form-surname").value;
+	let formNumber = document.getElementById("form-number").value;
+
+	let v1 = validateFirstName(formFirstName);
+	let v2 = validateSurname(formSurname);
+	let v3 = validateNumber(formNumber);
+
+	if (!v1 || !v2 || !v3) {
+		return false;
+	}
+
 	let colors = [
 		"hsla(0, 100%, 50%, 1)", 
 		"hsla(15, 100%, 50%, 1)", 
@@ -43,11 +56,6 @@ contactForm.addEventListener("submit", function(e) {
 	let contact = document.createElement("div");
 	contact.className = "contact";
 
-	// Remember to add validation for input elements ///////////////////////////
-	let formFirstName = document.getElementById("form-firstname").value;
-	let formSurname = document.getElementById("form-surname").value;
-	let formNumber = document.getElementById("form-number").value;
-
 	let avatar = document.createElement("span");
 	avatar.className = "avatar";
 	avatar.backgroundColor = colors[Math.floor(Math.random() * 24)];
@@ -76,3 +84,27 @@ contactForm.addEventListener("submit", function(e) {
 	let form = document.getElementById("form-contact");
 	form.reset();
 });
+
+function checkFirstName() {
+
+}
+
+function checkSurname() {
+
+}
+
+function checkNumber() {
+
+}
+
+function validateFirstName(fn) {
+	// return false;
+}
+
+function validateSurname(sn) {
+	// return false;
+}
+
+function validateNumber(n) {
+	// return false;
+}
