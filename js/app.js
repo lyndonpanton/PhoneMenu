@@ -8,3 +8,8 @@ Array.from(navItems).forEach(function(item) {
 		item.classList.add("selected");
 	});
 });
+
+let contactForm = document.getElementById("form-contact");
+contactForm.addEventListener("submit", function(e) {
+	e.preventDefault();
+});
