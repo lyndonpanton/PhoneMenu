@@ -73,4 +73,6 @@ contactForm.addEventListener("submit", function(e) {
 	let contacts = document.getElementById("contacts");
 	contacts.appendChild(contact);
 
+	let form = document.getElementById("form-contact");
+	form.reset();
 });
