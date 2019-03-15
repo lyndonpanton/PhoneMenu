@@ -39,6 +39,16 @@ html, body {
 	color: #FFFFFF;
 }
 
+#add-contact:active {
+
+}
+
+#add-contact:focus {
+	outline: none;
+	border-color: #800080;
+	color: #FF7D00;
+}
+
 #contacts {
 	height: 86%;
 	background-color: #FCFCFC;
