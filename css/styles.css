@@ -46,7 +46,7 @@ html, body {
 #add-contact:focus {
 	outline: none;
 	border-color: #800080;
-	color: #FF7D00;
+	color: #800080;
 }
 
 #contacts {
