@@ -18,13 +18,18 @@ contactForm.addEventListener("submit", function(e) {
 	let formSurname = document.getElementById("form-surname").value;
 	let formNumber = document.getElementById("form-number").value;
 
-	let v1 = validateFirstName(formFirstName);
-	let v2 = validateSurname(formSurname);
-	let v3 = validateNumber(formNumber);
+	// Change to error string
+	let errorString = "";
+	errorString += `${validateFirstName()}`;
+	errorString += `${validateSurname()}`;
+	errorString += `${validateNumber()}`;
+	// let v1 = validateFirstName(formFirstName);
+	// let v2 = validateSurname(formSurname);
+	// let v3 = validateNumber(formNumber);
 
-	if (!v1 || !v2 || !v3) {
-		return false;
-	}
+	// if (!v1 || !v2 || !v3) {
+	// 	return false;
+	// }
 
 	let colors = [
 		"hsla(0, 100%, 50%, 1)", 
@@ -98,13 +103,13 @@ function checkNumber() {
 }
 
 function validateFirstName(fn) {
-	// return false;
+	return true;
 }
 
 function validateSurname(sn) {
-	// return false;
+	return true;
 }
 
 function validateNumber(n) {
-	// return false;
+	return true;
 }
