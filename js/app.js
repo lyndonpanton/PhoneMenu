@@ -64,7 +64,7 @@ contactForm.addEventListener("submit", function(e) {
 
 	let avatar = document.createElement("span");
 	avatar.className = "avatar";
-	avatar.backgroundColor = colors[Math.floor(Math.random() * 24)];
+	avatar.style.backgroundColor = colors[Math.floor(Math.random() * 24)];
 	// console.log(colors[Math.floor(Math.random() * 24)]);
 
 	let name = document.createElement("span");
