@@ -7,6 +7,13 @@ html, body {
 	height: 100%;
 }
 
+.avatar {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
 .contact {
 	height: 10%;
 	border-bottom: 1px #EDEDED solid;
