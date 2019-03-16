@@ -27,12 +27,10 @@ html, body {
 
 .input-invalid {
 	border-bottom-color: #FF0000;
-	color: #FF0000;
 }
 
 .input-valid {
 	border-bottom-color: #00FF00;
-	color: #00FF00;
 }
 
 .nav-item {
