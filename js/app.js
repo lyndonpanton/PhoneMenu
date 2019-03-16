@@ -108,19 +108,31 @@ function validateFirstName(fn) {
 		return "First name not entered\n";
 	} else if (/\s/.test(fn)) {
 		return "First name must not contain whitespace\n";
-	} else if (fn.trim().length < 3) {
-		return "First name length must be at least 3 characters\n";
+	} else if (fn.trim().length < 2) {
+		return "First name length must be at least 2 characters\n";
 	} else if (/[^a-zA-Z0-9-]/.test(fn)) {
 		return "First name can only contain characters from a to z, A to Z, 0 to 9 and hyphens\n";
 	} else if (!/[a-z]/.test(fn) && !/[A-Z]/.test(fn)) {
-		return "First name must contain at least one character from the alphabet\n";
+		return "First name must contain at least one character from the english alphabet\n";
 	} else {
 		return "";
 	}
 }
 
 function validateSurname(sn) {
-	return "";
+	if (sn.trim() === "") {
+		return "Surname not entered\n";
+	} else if (/\s/.test(sn)) {
+		return "Surname must not contain whitespace\n";
+	} else if (sn.trim().length < 2) {
+		return "Surname length must be at least 2 characters\n";
+	} else if (/[^a-zA-Z0-9-]/.test(sn)) {
+		return "Surname can only contain characters from a to z, A to Z, 0 to 9 and hyphens\n";
+	} else if (!/[a-z]/.test(sn) && !/[A-Z]/.test(sn)) {
+		return "Surname must contain at least one character from the english alphapet\n";
+	} else {
+		return "";
+	}
 }
 
 function validateNumber(n) {
