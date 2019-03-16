@@ -22,7 +22,11 @@ html, body {
 
 .form-input:focus {
 	outline: none;
-	border-bottom-color: hsla(208, 100%, 50%, 1);
+}
+
+.form-input:focus::placeholder {
+	color: hsla(208, 100%, 50%, 1);
+	font-weight: bold;
 }
 
 .input-invalid {
