@@ -20,16 +20,17 @@ contactForm.addEventListener("submit", function(e) {
 
 	// Change to error string
 	let errorString = "";
-	errorString += `${validateFirstName()}`;
-	errorString += `${validateSurname()}`;
-	errorString += `${validateNumber()}`;
+	errorString += `${validateFirstName(formFirstName)}`;
+	errorString += `${validateSurname(formSurname)}`;
+	errorString += `${validateNumber(formNumber)}`;
 	// let v1 = validateFirstName(formFirstName);
 	// let v2 = validateSurname(formSurname);
 	// let v3 = validateNumber(formNumber);
 
-	// if (!v1 || !v2 || !v3) {
-	// 	return false;
-	// }
+	if (errorString.length) {
+		console.log(errorString);
+		return false;
+	}
 
 	let colors = [
 		"hsla(0, 100%, 50%, 1)", 
@@ -103,13 +104,25 @@ function checkNumber() {
 }
 
 function validateFirstName(fn) {
-	return true;
+	if (fn.trim() === "") {
+		return "First name not entered\n";
+	} else if (/\s/.test(fn)) {
+		return "First name must not contain whitespace\n";
+	} else if (fn.trim().length < 3) {
+		return "First name length must be at least 3 characters\n";
+	} else if (/[^a-zA-Z0-9-]/.test(fn)) {
+		return "First name can only contain characters from a to z, A to Z, 0 to 9 and hyphens\n";
+	} else if (!/[a-z]/.test(fn) && !/[A-Z]/.test(fn)) {
+		return "First name must contain at least one character from the alphabet\n";
+	} else {
+		return "";
+	}
 }
 
 function validateSurname(sn) {
-	return true;
+	return "";
 }
 
 function validateNumber(n) {
-	return true;
+	return "";
 }
