@@ -9,6 +9,8 @@ Array.from(navItems).forEach(function(item) {
 	});
 });
 
+let removeButtons = [];
+
 let contactForm = document.getElementById("form-contact");
 contactForm.addEventListener("submit", function(e) {
 	e.preventDefault();
@@ -89,6 +91,15 @@ contactForm.addEventListener("submit", function(e) {
 
 	let form = document.getElementById("form-contact");
 	form.reset();
+
+	removeButtons.push(remove);
+	Array.from(removeButtons).forEach(function(button) {
+		button.addEventListener("click", function() {
+			let parent = button.parentElement;
+			let grandParent = button.parentElement.parentElement;
+			grandParent.removeChild(parent);
+		});
+	});
 
 	document.getElementById("form-firstname").classList.remove("input-valid");
 	document.getElementById("form-surname").classList.remove("input-valid");
