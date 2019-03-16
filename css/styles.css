@@ -25,6 +25,11 @@ html, body {
 	border-bottom-color: hsla(208, 100%, 50%, 1);
 }
 
+.invalid {
+	color: #FF0000;
+	border-bottom-color: #FF0000;
+}
+
 .nav-item {
 	/*list-style-type: none;*/
 }
