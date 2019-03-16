@@ -139,11 +139,21 @@ surnameInput.addEventListener("keyup", function() {
 	}
 });
 
-numberInput.addEventListener("change", checkNumber(this));
-
-function checkNumber() {
-
-}
+numberInput.addEventListener("keyup", function() {
+	if (this.value.trim() === "") {
+		this.classList.remove("input-valid");
+		this.classList.add("input-invalid");
+	} else if (/[^\d]/.test(this.value)) {
+		this.classList.remove("input-valid");
+		this.classList.add("input-invalid");
+	} else if (this.value.trim().length < 2 || this.value.trim().length > 13) {
+		this.classList.remove("input-valid");
+		this.classList.add("input-invalid");
+	} else {
+		this.classList.remove("input-invalid");
+		this.classList.add("input-valid");
+	}
+});
 
 function validateFirstName(fn) {
 	if (fn.trim() === "") {
