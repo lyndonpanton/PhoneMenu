@@ -136,5 +136,16 @@ function validateSurname(sn) {
 }
 
 function validateNumber(n) {
-	return "";
+	if (n.trim() === "") {
+		return "Phone number not entered\n";
+	} else if (/[^\d]/.test(n)) {
+		return "Phone number must only contain digits\n";
+	} else if (n.trim().length < 2 || n.trim().length > 13) { // This excludes country codes
+		// Minimum emergency number length is 2 (Alferia, Morocco, Senegal, etc.)
+		// Minimum regular number length is 4 (St. Helena)
+		// Maximum regular number length is 13 (Austria)
+		return "Phone number must be between 2 characters and 13 characters long\n";
+	} else {
+		return "";
+	}
 }
