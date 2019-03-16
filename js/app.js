@@ -89,6 +89,10 @@ contactForm.addEventListener("submit", function(e) {
 
 	let form = document.getElementById("form-contact");
 	form.reset();
+
+	document.getElementById("form-firstname").classList.remove("input-valid");
+	document.getElementById("form-surname").classList.remove("input-valid");
+	document.getElementById("form-number").classList.remove("input-valid");
 });
 
 let firstNameInput = document.getElementById("form-firstname");
