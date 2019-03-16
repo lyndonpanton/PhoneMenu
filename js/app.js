@@ -91,6 +91,22 @@ contactForm.addEventListener("submit", function(e) {
 	form.reset();
 });
 
+let firstNameInput = document.getElementById("form-firstname");
+let surnameInput = document.getElementById("form-surname");
+let numberInput = document.getElementById("form-number");
+
+firstNameInput.addEventListener("change", function() {
+
+});
+
+surnameInput.addEventListener("change", function() {
+
+});
+
+numberInput.addEventListener("change", function() {
+
+});
+
 function checkFirstName() {
 
 }
