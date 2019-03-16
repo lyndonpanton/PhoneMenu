@@ -48,6 +48,19 @@ html, body {
 	/*list-style-type: none;*/
 }
 
+.remove {
+	float: right;
+	margin-top: 20px;
+	margin-right: 10%;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #FF0000;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 20px;
+}
+
 .selected {
 	border-bottom: 2px hsla(208, 100%, 50%, 1) solid;
 	color: hsla(208, 100%, 50%, 1);
