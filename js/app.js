@@ -95,21 +95,31 @@ let firstNameInput = document.getElementById("form-firstname");
 let surnameInput = document.getElementById("form-surname");
 let numberInput = document.getElementById("form-number");
 
-firstNameInput.addEventListener("change", function() {
-
+firstNameInput.addEventListener("keyup", function() {
+	if (this.value.trim() === "") {
+		this.classList.remove("input-valid");
+		this.classList.add("input-invalid");
+	} else if (/\s/.test(this.value)) {
+		this.classList.remove("input-valid");
+		this.classList.add("input-invalid");
+	} else if (this.value.trim().length < 2) {
+		this.classList.remove("input-valid");
+		this.classList.add("input-invalid");
+	} else if (/[^a-zA-Z0-9-]/.test(this.value)) {
+		this.classList.remove("input-valid");
+		this.classList.add("input-invalid");
+	} else if (!/[a-z]/.test(this.value) && !/[A-Z]/.test(this.value)) {
+		this.classList.remove("input-valid");
+		this.classList.add("input-invalid");
+	} else {
+		this.classList.remove("input-invalid");
+		this.classList.add("input-valid");
+	}
 });
 
-surnameInput.addEventListener("change", function() {
+surnameInput.addEventListener("change", checkSurname(this));
 
-});
-
-numberInput.addEventListener("change", function() {
-
-});
-
-function checkFirstName() {
-
-}
+numberInput.addEventListener("change", checkNumber(this));
 
 function checkSurname() {
 
