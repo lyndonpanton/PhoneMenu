@@ -82,6 +82,17 @@ contactForm.addEventListener("submit", function(e) {
 			this.classList.add("star-yellow");
 			starred.push(this.parentElement);
 			console.log(starred);
+
+			let favourites = document.getElementById("favourites");
+
+			while (favourites.firstChild) {
+				favourites.removeChild(favourites.firstChild);
+			}
+
+			starred.forEach(function(contact) {
+				let clone = contact.cloneNode();
+				favourites.appendChild(clone);
+			});
 		} else {
 			this.classList.remove("star-yellow");
 			this.classList.add("star-black");
