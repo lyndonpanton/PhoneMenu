@@ -233,3 +233,30 @@ function validateNumber(n) {
 		return "";
 	}
 }
+
+const dialler = document.getElementById("dialler");
+const contacts = document.getElementById("contacts");
+const favourites = document.getElementById("favourites");
+
+const tabs = document.getElementsByClassName("nav-item");
+Array.from(tabs).forEach(function(tab) {
+	tab.addEventListener("click", function() {
+		switch (this.textContent) {
+			case "Dialler":
+				contacts.style.display = "none";
+				favourites.style.display = "none";
+				dialler.style.display = "block";
+				break;
+			case "Contacts":
+				dialler.style.display = "none";
+				favourites.style.display = "none";
+				contacts.style.display = "block";
+				break;
+			case "Favourites":
+				dialler.style.display = "none";
+				contacts.style.display = "none";
+				favourites.style.display = "block";
+				break;
+		}
+	});
+})
