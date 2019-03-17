@@ -16,19 +16,14 @@ let contactForm = document.getElementById("form-contact");
 contactForm.addEventListener("submit", function(e) {
 	e.preventDefault();
 
-	// Remember to add validation for input elements ///////////////////////////
 	let formFirstName = document.getElementById("form-firstname").value;
 	let formSurname = document.getElementById("form-surname").value;
 	let formNumber = document.getElementById("form-number").value;
 
-	// Change to error string
 	let errorString = "";
 	errorString += `${validateFirstName(formFirstName)}`;
 	errorString += `${validateSurname(formSurname)}`;
 	errorString += `${validateNumber(formNumber)}`;
-	// let v1 = validateFirstName(formFirstName);
-	// let v2 = validateSurname(formSurname);
-	// let v3 = validateNumber(formNumber);
 
 	if (errorString.length) {
 		console.log(errorString);
@@ -98,8 +93,24 @@ contactForm.addEventListener("submit", function(e) {
 	let form = document.getElementById("form-contact");
 	form.reset();
 
+	stars.push(star);
+	stars.forEach(function(icon) {
+		icon.addEventListener("click", function() {
+			if (Array.from(icon.classList).indexOf("star-black") != -1) {
+				icon.classList.remove("star-black");
+				icon.classList.add("star-yellow");
+			} else {
+				icon.classList.remove("star-yellow");
+				icon.classList.add("star-black");
+			}
+
+			// Add logic for adding starred contacts to favourites
+		});
+	});
+
+
 	removeButtons.push(remove);
-	Array.from(removeButtons).forEach(function(button) {
+	removeButtons.forEach(function(button) {
 		button.addEventListener("click", function() {
 			let parent = button.parentElement;
 			let grandParent = button.parentElement.parentElement;
