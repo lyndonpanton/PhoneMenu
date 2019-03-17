@@ -113,6 +113,20 @@ html, body {
 	background-color: #FCFCFC;
 }
 
+#dialler {
+	display: none;
+	height: 80%;
+	margin-top: 3%;
+	background-color: #800000;
+}
+
+#favourites {
+	display: none;
+	height: 83%;
+	margin-top: 3%;
+	background-color: #000088;
+}
+
 #form-contact {
 	margin-top: -2%;
 }
