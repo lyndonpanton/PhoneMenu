@@ -77,6 +77,17 @@ contactForm.addEventListener("submit", function(e) {
 	let star = document.createElement("span");
 	star.className = "star star-black";
 	star.textContent = "\u2605";
+	star.addEventListener("click", function() {
+		if (Array.from(this.classList).indexOf("star-black") != -1) {
+			this.classList.remove("star-black");
+			this.classList.add("star-yellow");
+		} else {
+			this.classList.remove("star-yellow");
+			this.classList.remove("star-black");
+		}
+	});
+
+	stars.push(star);
 
 	let remove = document.createElement("div");
 	remove.className = "remove";
@@ -93,21 +104,6 @@ contactForm.addEventListener("submit", function(e) {
 
 	let form = document.getElementById("form-contact");
 	form.reset();
-
-	stars.push(star);
-	stars.forEach(function(icon) {
-		icon.addEventListener("click", function() {
-			if (Array.from(icon.classList).indexOf("star-black") != -1) {
-				icon.classList.remove("star-black");
-				icon.classList.add("star-yellow");
-			} else {
-				icon.classList.remove("star-yellow");
-				icon.classList.add("star-black");
-			}
-
-			// Add logic for adding starred contacts to favourites
-		});
-	});
 
 
 	removeButtons.push(remove);
