@@ -9,9 +9,8 @@ Array.from(navItems).forEach(function(item) {
 	});
 });
 
-let stars = [];
+let starred = [];
 let removeButtons = [];
-let favouriteContacts = [];
 
 let contactForm = document.getElementById("form-contact");
 contactForm.addEventListener("submit", function(e) {
@@ -81,13 +80,13 @@ contactForm.addEventListener("submit", function(e) {
 		if (Array.from(this.classList).indexOf("star-black") != -1) {
 			this.classList.remove("star-black");
 			this.classList.add("star-yellow");
+			starred.push(this);
+			console.log(starred);
 		} else {
 			this.classList.remove("star-yellow");
-			this.classList.remove("star-black");
+			this.classList.add("star-black");
 		}
 	});
-
-	stars.push(star);
 
 	let remove = document.createElement("div");
 	remove.className = "remove";
@@ -104,7 +103,6 @@ contactForm.addEventListener("submit", function(e) {
 
 	let form = document.getElementById("form-contact");
 	form.reset();
-
 
 	removeButtons.push(remove);
 	removeButtons.forEach(function(button) {
