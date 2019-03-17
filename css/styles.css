@@ -77,7 +77,7 @@ html, body {
 }
 
 .star-yellow {
-	color: #FFFF00;
+	color: hsla(48, 100%, 50%, 1);
 }
 
 #add-contact {
