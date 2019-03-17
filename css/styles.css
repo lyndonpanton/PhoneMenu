@@ -89,6 +89,10 @@ html, body {
 	color: #800080;
 }
 
+#app {
+	height: 80%;
+}
+
 #contacts {
 	height: 83%;
 	margin-top: 3%;
