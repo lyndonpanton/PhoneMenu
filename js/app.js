@@ -85,6 +85,8 @@ contactForm.addEventListener("submit", function(e) {
 		} else {
 			this.classList.remove("star-yellow");
 			this.classList.add("star-black");
+			starred.splice(starred.indexOf(this.parentElement), 1);
+			console.log(starred);
 		}
 	});
 
@@ -254,4 +256,4 @@ Array.from(tabs).forEach(function(tab) {
 				break;
 		}
 	});
-})
+});
