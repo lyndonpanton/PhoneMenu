@@ -66,6 +66,20 @@ html, body {
 	color: hsla(208, 100%, 50%, 1);
 }
 
+.star {
+	margin-top: 20px;
+	margin-left: 20%;
+	font-size: 24px;
+}
+
+.star-black {
+	color: #000000;
+}
+
+.star-yellow {
+	color: #FFFF00;
+}
+
 #add-contact {
 	width: 22px;
 	height: 22px;
