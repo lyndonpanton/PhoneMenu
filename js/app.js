@@ -9,6 +9,7 @@ Array.from(navItems).forEach(function(item) {
 	});
 });
 
+let stars = [];
 let removeButtons = [];
 
 let contactForm = document.getElementById("form-contact");
@@ -77,6 +78,10 @@ contactForm.addEventListener("submit", function(e) {
 	number.className = "number";
 	number.textContent = `${formNumber}`;
 
+	let star = document.createElement("span");
+	star.className = "star star-black";
+	star.textContent = "\u2605";
+
 	let remove = document.createElement("div");
 	remove.className = "remove";
 	remove.textContent = "\u00D7";
@@ -84,6 +89,7 @@ contactForm.addEventListener("submit", function(e) {
 	contact.appendChild(avatar);
 	contact.appendChild(name);
 	contact.appendChild(number);
+	contact.appendChild(star);
 	contact.appendChild(remove);
 
 	let contacts = document.getElementById("contacts");
