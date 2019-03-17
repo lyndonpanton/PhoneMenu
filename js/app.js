@@ -11,6 +11,7 @@ Array.from(navItems).forEach(function(item) {
 
 let stars = [];
 let removeButtons = [];
+let favouriteContacts = [];
 
 let contactForm = document.getElementById("form-contact");
 contactForm.addEventListener("submit", function(e) {
