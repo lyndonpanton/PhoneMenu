@@ -80,7 +80,7 @@ contactForm.addEventListener("submit", function(e) {
 		if (Array.from(this.classList).indexOf("star-black") != -1) {
 			this.classList.remove("star-black");
 			this.classList.add("star-yellow");
-			starred.push(this);
+			starred.push(this.parentElement);
 			console.log(starred);
 		} else {
 			this.classList.remove("star-yellow");
