@@ -91,6 +91,7 @@ contactForm.addEventListener("submit", function(e) {
 
 			starred.forEach(function(contact) {
 				let clone = contact.cloneNode(true);
+				clone.id = `fav${starred.length}`;
 				favourites.appendChild(clone);
 			});
 		} else {
