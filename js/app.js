@@ -1,3 +1,8 @@
+// Error found: If contact1 has firstname "a" and surname "z"
+// and contact2 has firstname "z" and surname "a"
+// If you try to add contact3 with firstname "a" and surname "a"
+// or contact3 with firstname "z" and surname "z" the submission will fail
+
 let navItems = document.getElementsByClassName("nav-item");
 Array.from(navItems).forEach(function(item) {
 	item.addEventListener("click", function() {
