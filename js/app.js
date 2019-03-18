@@ -89,6 +89,19 @@ contactForm.addEventListener("submit", function(e) {
 			starred.push(this.parentElement);
 			console.log(starred);
 
+			// Attempt to sort stars alphabetically
+			starred.sort(function(a, b) {
+				let name1 = a.getElementsByClassName("name")[0].textContent.toLowerCase();
+				let name2 = b.getElementsByClassName("name")[0].textContent.toLowerCase();
+
+				if (name1 < name2) {
+					return -1;
+				} else {
+					return 1;
+				}
+				// return name1 - name2;
+			});
+
 			let favourites = document.getElementById("favourites");
 
 			while (favourites.firstChild) {
