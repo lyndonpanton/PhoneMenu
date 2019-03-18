@@ -99,6 +99,16 @@ contactForm.addEventListener("submit", function(e) {
 			this.classList.add("star-black");
 			starred.splice(starred.indexOf(this.parentElement), 1);
 			console.log(starred);
+
+			while (favourites.firstChild) {
+				favourites.removeChild(favourites.firstChild);
+			}
+
+			starred.forEach(function(contact) {
+				let clone = contact.cloneNode(true);
+				clone.id = `fav${starred.length}`;
+				favourites.append(clone);
+			});
 		}
 	});
 
