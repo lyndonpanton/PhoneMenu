@@ -63,7 +63,6 @@ contactForm.addEventListener("submit", function(e) {
 	let avatar = document.createElement("span");
 	avatar.className = "avatar";
 	avatar.style.backgroundColor = colors[Math.floor(Math.random() * 24)];
-	// console.log(colors[Math.floor(Math.random() * 24)]);
 
 	let name = document.createElement("span");
 	name.className = "name";
@@ -251,7 +250,21 @@ function validateNumber(n) {
 		// Maximum regular number length is 13 (Austria)
 		return "Phone number must be between 2 characters and 13 characters long\n";
 	} else {
-		return "";
+		let contacts = document.getElementsByClassName("contact");
+		let repeatNumber = 0;
+		if (Array.from(contacts).length > 0) {
+			Array.from(contacts).forEach(function(contact) {
+				if (n == contact.getElementsByClassName("number")[0].textContent) {
+					repeatNumber = 1;
+				}
+			});
+		}
+
+		if (repeatNumber) {
+			return "Phone number already exists\n";
+		} else {
+			return "";
+		}
 	}
 }
 
