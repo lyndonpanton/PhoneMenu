@@ -90,7 +90,7 @@ contactForm.addEventListener("submit", function(e) {
 			}
 
 			starred.forEach(function(contact) {
-				let clone = contact.cloneNode();
+				let clone = contact.cloneNode(true);
 				favourites.appendChild(clone);
 			});
 		} else {
