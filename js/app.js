@@ -11,6 +11,7 @@ Array.from(navItems).forEach(function(item) {
 
 let starred = [];
 let removeButtons = [];
+let repeatName = "";
 
 let contactForm = document.getElementById("form-contact");
 contactForm.addEventListener("submit", function(e) {
@@ -24,6 +25,12 @@ contactForm.addEventListener("submit", function(e) {
 	errorString += `${validateFirstName(formFirstName)}`;
 	errorString += `${validateSurname(formSurname)}`;
 	errorString += `${validateNumber(formNumber)}`;
+
+	if (repeatName.length == 2) {
+		errorString += "First name and surname combination already exists\n";
+	}
+
+	repeatName = "";
 
 	if (errorString.length) {
 		console.log(errorString);
@@ -219,6 +226,14 @@ function validateFirstName(fn) {
 	} else if (!/[a-z]/.test(fn) && !/[A-Z]/.test(fn)) {
 		return "First name must contain at least one character from the english alphabet\n";
 	} else {
+		let contacts = document.getElementsByClassName("contact");
+		if (Array.from(contacts).length > 0) {
+			Array.from(contacts).forEach(function(contact) {
+				if (fn == contact.getElementsByClassName("name")[0].textContent.split(" ")[0]) {
+					repeatName += "X";
+				}
+			});
+		}
 		return "";
 	}
 }
@@ -235,6 +250,15 @@ function validateSurname(sn) {
 	} else if (!/[a-z]/.test(sn) && !/[A-Z]/.test(sn)) {
 		return "Surname must contain at least one character from the english alphapet\n";
 	} else {
+		let contacts = document.getElementsByClassName("contact");
+		if (Array.from(contacts).length > 0) {
+			Array.from(contacts).forEach(function(contact) {
+				if (sn == contact.getElementsByClassName("name")[0].textContent.split(" ")[1]) {
+					repeatName += "X";
+				}
+			});
+		}
+
 		return "";
 	}
 }
