@@ -141,6 +141,19 @@ contactForm.addEventListener("submit", function(e) {
 	remove.className = "remove";
 	remove.textContent = "\u00D7";
 
+	removeButtons.push(remove);
+	removeButtons.forEach(function(button) {
+		button.addEventListener("click", function() {
+			let parent = button.parentElement;
+			if (Array.from(parent.getElementsByClassName("star")[0].classList).indexOf("star-yellow") != -1) {
+				console.log("Favourite contacts cannot be deleted.");
+			} else {
+				let grandParent = button.parentElement.parentElement;
+				grandParent.removeChild(parent);
+			}
+		});
+	});
+
 	contact.appendChild(avatar);
 	contact.appendChild(name);
 	contact.appendChild(number);
@@ -178,15 +191,6 @@ contactForm.addEventListener("submit", function(e) {
 
 	let form = document.getElementById("form-contact");
 	form.reset();
-
-	removeButtons.push(remove);
-	removeButtons.forEach(function(button) {
-		button.addEventListener("click", function() {
-			let parent = button.parentElement;
-			let grandParent = button.parentElement.parentElement;
-			grandParent.removeChild(parent);
-		});
-	});
 
 	document.getElementById("form-firstname").classList.remove("input-valid");
 	document.getElementById("form-surname").classList.remove("input-valid");
