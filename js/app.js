@@ -151,8 +151,8 @@ contactForm.addEventListener("submit", function(e) {
 	console.log(people);
 
 	people.sort(function(a, b) {
-		let name1 = a.getElementsByClassName("name")[0].toLowerCase();
-		let name2 = b.getElementsByClassName("name")[0].toLowerCase();
+		let name1 = a.getElementsByClassName("name")[0].textContent.toLowerCase();
+		let name2 = b.getElementsByClassName("name")[0].textContent.toLowerCase();
 
 		if (name1 < name2) {
 			return -1;
@@ -163,8 +163,18 @@ contactForm.addEventListener("submit", function(e) {
 
 	console.log(people);
 
-	let contacts = document.getElementById("contacts");
-	contacts.appendChild(contact);
+	// let contacts = document.getElementById("contacts");
+	// contacts.appendChild(contact);
+
+	let contacts = document.getElementsByClassName("contact");
+	Array.from(contacts).forEach(function(contact) {
+		contact.parentElement.removeChild(contact);
+	});
+
+	people.forEach(function(person) {
+		let contacts = document.getElementById("contacts");
+		contacts.appendChild(person);
+	});
 
 	let form = document.getElementById("form-contact");
 	form.reset();
