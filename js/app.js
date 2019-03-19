@@ -14,6 +14,7 @@ Array.from(navItems).forEach(function(item) {
 	});
 });
 
+let people = [];
 let starred = [];
 let removeButtons = [];
 let repeatName = "";
@@ -94,7 +95,6 @@ contactForm.addEventListener("submit", function(e) {
 			starred.push(this.parentElement);
 			console.log(starred);
 
-			// Attempt to sort stars alphabetically
 			starred.sort(function(a, b) {
 				let name1 = a.getElementsByClassName("name")[0].textContent.toLowerCase();
 				let name2 = b.getElementsByClassName("name")[0].textContent.toLowerCase();
@@ -104,7 +104,6 @@ contactForm.addEventListener("submit", function(e) {
 				} else {
 					return 1;
 				}
-				// return name1 - name2;
 			});
 
 			let favourites = document.getElementById("favourites");
@@ -147,6 +146,9 @@ contactForm.addEventListener("submit", function(e) {
 	contact.appendChild(number);
 	contact.appendChild(star);
 	contact.appendChild(remove);
+
+	people.push(contact);
+	console.log(people);
 
 	let contacts = document.getElementById("contacts");
 	contacts.appendChild(contact);
