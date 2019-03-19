@@ -175,7 +175,7 @@ contactForm.addEventListener("submit", function(e) {
 		// 	grandParent.removeChild(parent);
 
 		// 	people.splice(people.indexOf(parent), 1);
-		// });
+		});
 	});
 
 	contact.appendChild(avatar);
