@@ -146,12 +146,36 @@ contactForm.addEventListener("submit", function(e) {
 		button.addEventListener("click", function() {
 			let parent = button.parentElement;
 			if (Array.from(parent.getElementsByClassName("star")[0].classList).indexOf("star-yellow") != -1) {
-				console.log("Favourite contacts cannot be deleted.");
+				console.log("Favourite contacts cannot be deleted");
 			} else {
 				let grandParent = button.parentElement.parentElement;
 				grandParent.removeChild(parent);
 			}
-		});
+
+		// 	// Alternative logic: Here you can delete starred contacts and both
+		// 	// that contact and its matching element in the favourites list are removed
+		// 	let parent = button.parentElement;
+		// 	let favourites = document.getElementById("favourites").getElementsByClassName("contact");
+
+		// 	if (Array.from(parent.getElementsByClassName("star")[0].classList).indexOf("star-yellow") != -1) {
+		// 		let parentClone;
+		// 		Array.from(favourites).forEach(function(favourite) {
+		// 			if (favourite.getElementsByClassName("name")[0].textContent == parent.getElementsByClassName("name")[0].textContent) {
+		// 				parentClone = favourite;
+		// 			}
+		// 		});
+
+		// 		let grandParentClone = parentClone.parentElement;
+		// 		grandParentClone.removeChild(parentClone);
+
+		// 		starred.splice(starred.indexOf(parentClone), 1);
+		// 	}
+			
+		// 	let grandParent = parent.parentElement;
+		// 	grandParent.removeChild(parent);
+
+		// 	people.splice(people.indexOf(parent), 1);
+		// });
 	});
 
 	contact.appendChild(avatar);
