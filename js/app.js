@@ -150,6 +150,19 @@ contactForm.addEventListener("submit", function(e) {
 	people.push(contact);
 	console.log(people);
 
+	people.sort(function(a, b) {
+		let name1 = a.getElementsByClassName("name")[0].toLowerCase();
+		let name2 = b.getElementsByClassName("name")[0].toLowerCase();
+
+		if (name1 < name2) {
+			return -1;
+		} else {
+			return 1;
+		}
+	});
+
+	console.log(people);
+
 	let contacts = document.getElementById("contacts");
 	contacts.appendChild(contact);
 
