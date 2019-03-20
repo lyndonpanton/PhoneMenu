@@ -123,7 +123,7 @@ html, body {
 #dialler-pad {
 	position: relative;
 	display: grid;
-	grid-template-rows: 10% 10% 10% 10% 15%;
+	grid-template-rows: 20% 20% 20% 20% 25%;
 	grid-template-columns: 1fr  1fr 1fr;
 	height: 90%;
 	top: 35%;
