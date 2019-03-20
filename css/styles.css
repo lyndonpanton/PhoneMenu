@@ -48,6 +48,10 @@ html, body {
 	/*list-style-type: none;*/
 }
 
+.pad {
+	margin-top: 10%;
+}
+
 .remove {
 	float: right;
 	margin-top: 20px;
