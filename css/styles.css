@@ -120,6 +120,14 @@ html, body {
 	background-color: #800000;
 }
 
+#dialler-pad {
+	display: grid;
+	grid-template-rows: 10% 10% 10% 15%;
+	grid-template-columns: 1fr  1fr 1fr;
+	height: 50%;
+	text-align: center;
+}
+
 #favourites {
 	display: none;
 	height: 83%;
