@@ -160,12 +160,14 @@ html, body {
 }
 
 #phone-nav {
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	height: 3%;
 	align-items: center;
 	justify-content: space-around;
-	border-top: 1px #DDDDDD solid;
+	z-index: 2;
+	border-top: 2px #DDDDDD solid;
 	font-size: 40px;
 	color: #888888;
 }
