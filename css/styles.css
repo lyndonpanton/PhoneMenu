@@ -52,6 +52,10 @@ html, body {
 	margin-top: 10%;
 }
 
+.pad-blue {
+	color: #0055FF;
+}
+
 .remove {
 	float: right;
 	margin-top: 20px;
