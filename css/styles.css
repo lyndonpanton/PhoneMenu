@@ -121,10 +121,15 @@ html, body {
 }
 
 #dialler-pad {
+	position: relative;
 	display: grid;
 	grid-template-rows: 10% 10% 10% 10% 15%;
 	grid-template-columns: 1fr  1fr 1fr;
-	height: 50%;
+	height: 90%;
+	top: 35%;
+	z-index: 1;
+	border-top: 1px #EDEDED solid;
+	background-color: #0000FF; /*white*/
 	text-align: center;
 }
 
