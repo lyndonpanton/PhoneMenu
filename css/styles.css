@@ -143,6 +143,10 @@ html, body {
 	font-weight: bold;
 }
 
+#dialler-pad-call {
+	color: #00AA00;
+}
+
 #favourites {
 	display: none;
 	height: 83%;
