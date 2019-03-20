@@ -131,6 +131,8 @@ html, body {
 	border-top: 1px #EDEDED solid;
 	background-color: #0000FF; /*white*/
 	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
 }
 
 #favourites {
