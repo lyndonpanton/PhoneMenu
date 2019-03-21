@@ -405,15 +405,23 @@ Array.from(tabs).forEach(function(tab) {
 let padItems = document.getElementsByClassName("pad");
 Array.from(padItems).forEach(function(pad) {
 	pad.addEventListener("click", function() {
+		let display = document.getElementById("display");
 		switch (pad.id) {
 			case "dialler-pad-call":
-				// Add logic for sending user to phone app with input number if they are using a mobile
+				// Checks for mobile devices, can be bypassed
+				// if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				if (/Mobi|Android/i.test(navigator.userAgent)) {
+					// Add logic for sending user to phone app with input number if they are using a mobile
+					window.open(`tel:${display.textxContent}`);
+				}
 				break;
 			case "dialler-pad-close":
-			case "dialler-pad-options":
+				// Add logic for closing dialler pad
+				break;
+			case "dialler-pad-backspace":
+				display.textContent = display.textContent.slice(0, display.textContent.length - 1);
 				break;
 			default:
-				let display = document.getElementById("display");
 				display.textContent += pad.textContent;
 				break;
 		}
