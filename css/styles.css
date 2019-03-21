@@ -136,7 +136,7 @@ html, body {
 	grid-template-rows: 20% 20% 20% 20% 25%;
 	grid-template-columns: 1fr  1fr 1fr;
 	height: 90%;
-	top: 35%;
+	top: 25%;
 	z-index: 1;
 	border: 1px solid #EDEDED;
 	border-radius: 2%;
