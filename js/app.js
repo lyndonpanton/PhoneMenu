@@ -224,7 +224,7 @@ contactForm.addEventListener("submit", function(e) {
 let diallerPad = document.getElementById("dialler-pad");
 let downChevron = document.getElementById("dialler-pad-close");
 downChevron.addEventListener("click", function() {
-	if (Array.from(diallerPad.classList).indexof("opened") != -1) {
+	if (Array.from(diallerPad.classList).indexOf("opened") != -1) {
 		diallerPad.classList.remove("opened");
 		diallerPad.classList.add("closed");
 	} else {
