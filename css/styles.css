@@ -139,6 +139,7 @@ html, body {
 	top: 35%;
 	z-index: 1;
 	border: 1px solid #EDEDED;
+	border-radius: 2%;
 	background-color: #FFFFFF;
 	text-align: center;
 	font-size: 30px;
