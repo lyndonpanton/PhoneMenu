@@ -221,17 +221,17 @@ contactForm.addEventListener("submit", function(e) {
 	document.getElementById("form-number").classList.remove("input-valid");
 });
 
-let diallerPad = document.getElementById("dialler-pad");
-let downChevron = document.getElementById("dialler-pad-close");
-downChevron.addEventListener("click", function() {
-	if (Array.from(diallerPad.classList).indexOf("opened") != -1) {
-		diallerPad.classList.remove("opened");
-		diallerPad.classList.add("closed");
-	} else {
-		diallerPad.classList.remove("closed");
-		diallerPad.classList.add("opened");
-	}
-});
+// let diallerPad = document.getElementById("dialler-pad");
+// let downChevron = document.getElementById("dialler-pad-close");
+// downChevron.addEventListener("click", function() {
+// 	if (Array.from(diallerPad.classList).indexOf("opened") != -1) {
+// 		diallerPad.classList.remove("opened");
+// 		diallerPad.classList.add("closed");
+// 	} else {
+// 		diallerPad.classList.remove("closed");
+// 		diallerPad.classList.add("opened");
+// 	}
+// });
 
 let firstNameInput = document.getElementById("form-firstname");
 let surnameInput = document.getElementById("form-surname");
