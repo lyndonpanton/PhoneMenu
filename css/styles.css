@@ -16,10 +16,6 @@ html, body {
 	border-radius: 50%;
 }
 
-.closed {
-
-}
-
 .contact {
 	height: 10%;
 	border-bottom: 1px #EDEDED solid;
@@ -48,10 +44,6 @@ html, body {
 
 .input-valid {
 	border-bottom-color: #00FF00;
-}
-
-.opened {
-	height: 90%;
 }
 
 .nav-item {
@@ -143,6 +135,7 @@ html, body {
 	display: grid;
 	grid-template-rows: 20% 20% 20% 20% 25%;
 	grid-template-columns: 1fr  1fr 1fr;
+	height: 90%;
 	top: 35%;
 	z-index: 1;
 	border: 1px solid #EDEDED;
