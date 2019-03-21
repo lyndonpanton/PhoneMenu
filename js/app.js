@@ -401,3 +401,10 @@ Array.from(tabs).forEach(function(tab) {
 		}
 	});
 });
+
+let padItems = document.getElementsByClassName("pad");
+Array.from(padItems).forEach(function(pad) {
+	switch (Array.from(pad.classList)) {
+		
+	}
+});
