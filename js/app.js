@@ -404,7 +404,18 @@ Array.from(tabs).forEach(function(tab) {
 
 let padItems = document.getElementsByClassName("pad");
 Array.from(padItems).forEach(function(pad) {
-	switch (Array.from(pad.classList)) {
-		
-	}
+	pad.addEventListener("click", function() {
+		switch (pad.id) {
+			case "dialler-pad-call":
+				// Add logic for sending user to phone app with input number if they are using a mobile
+				break;
+			case "dialler-pad-close":
+			case "dialler-pad-options":
+				break;
+			default:
+				let display = document.getElementById("display");
+				display.textContent += pad.textContent;
+				break;
+		}
+	});
 });
