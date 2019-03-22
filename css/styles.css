@@ -52,6 +52,11 @@ html, body {
 
 .pad {
 	margin-top: 10%;
+	transition: all 0.3s linear;
+}
+
+.pad:active {
+	background-color: #DDDDDD;
 }
 
 .pad-blue {
