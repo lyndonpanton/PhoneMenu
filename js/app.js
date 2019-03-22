@@ -412,7 +412,7 @@ Array.from(padItems).forEach(function(pad) {
 				// if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 				if (/Mobi|Android/i.test(navigator.userAgent)) {
 					// Add logic for sending user to phone app with input number if they are using a mobile
-					window.open(`tel:${display.textxContent}`);
+					window.open(`tel:${display.textContent}`);
 				}
 				break;
 			case "dialler-pad-close":
