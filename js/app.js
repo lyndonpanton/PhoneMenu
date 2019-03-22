@@ -426,3 +426,32 @@ Array.from(padItems).forEach(function(pad) {
 		}
 	});
 });
+
+let callIcon = document.getElementById("dialler-pad-call");
+callIcon.addEventListener("click", function() {
+	let recentCalls = document.getElementById("recent-calls");
+	let number = document.getElementById("display").textContent;
+	// If contact with that number exists...
+	if (0) {
+
+	} else { // If there is no contact with that number...
+		let callInfo = document.createElement("div");
+
+		let callIcon = document.createElement("span");
+		callIcon.className = "avatar";
+		callIcon.style.backgroundColor = colors[Math.floor(Math.random() * 24)];
+
+		let callNumber = document.createElement("span");
+		callNumber.className = "number";
+		callNumber.textContent = number;
+
+		let callDateTime = document.createElement("span");
+		callDateTime.textContent = (new Date());
+
+		callInfo.appendChild(callIcon);
+		callInfo.appendChild(callNumber);
+		callInfo.appendChild(callDateTime);
+
+		recentCalls.appendChild(callInfo);
+	}
+});
