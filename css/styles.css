@@ -21,6 +21,10 @@ html, body {
 	border-bottom: 1px #EDEDED solid;
 }
 
+.date-time {
+	color: chartreuse; /* Temporary */
+}
+
 .form-input {
 	width: 29%;
 	border-top: none;
@@ -170,7 +174,7 @@ html, body {
 	display: none;
 	height: 83%;
 	margin-top: 3%;
-	background-color: #000088;
+	background-color: #FFFFFF;
 }
 
 #form-contact {
