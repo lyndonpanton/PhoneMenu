@@ -446,6 +446,7 @@ callIcon.addEventListener("click", function() {
 		callNumber.textContent = number;
 
 		let callDateTime = document.createElement("span");
+		callDateTime.className = "date-time";
 		callDateTime.textContent = (new Date());
 
 		callInfo.appendChild(callIcon);
