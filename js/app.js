@@ -149,6 +149,8 @@ contactForm.addEventListener("submit", function(e) {
 			} else {
 				let grandParent = button.parentElement.parentElement;
 				grandParent.removeChild(parent);
+
+				people.splice(people.indexOf(parent), 1);
 			}
 
 		// 	// Alternative logic: Here you can delete starred contacts and both
