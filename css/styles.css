@@ -189,11 +189,11 @@ html, body {
 }
 
 #error-message-text {
-
+	background-color: #BB00EE;
 }
 
 #error-message-title {
-
+	background-color: #BB0099;
 }
 
 #favourites {
