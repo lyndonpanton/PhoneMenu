@@ -171,7 +171,21 @@ html, body {
 }
 
 #error-message {
-
+	position: absolute;
+	display: block;
+	width: 80%;
+	height: 20%;
+	top: 65%;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	visibility: visible; /* initially hidden */
+	border-radius: 3%;
+	background-color: #BB0044;
+	overflow: hidden;
+	text-align: center;
+	color: white;
+	/*transition: all 2.5s error;*/
 }
 
 #error-text {
