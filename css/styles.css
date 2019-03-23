@@ -170,6 +170,18 @@ html, body {
 	color: #000000;
 }
 
+#error-message {
+
+}
+
+#error-text {
+
+}
+
+#error-title {
+
+}
+
 #favourites {
 	display: none;
 	height: 83%;
@@ -207,4 +219,8 @@ html, body {
 	border-top: 2px #DDDDDD solid;
 	font-size: 40px;
 	color: #888888;
+}
+
+@keyframes error {
+	
 }
