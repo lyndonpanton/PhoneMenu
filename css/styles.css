@@ -210,7 +210,8 @@ html, body {
 #error-message-title {
 	width: 60%;
 	height: 16%;
-	margin: 5% auto 0;
+	padding-top: 2%;
+	margin: 3% auto 0;
 	background-color: #BB00EE;
 	color: #FFFFFF;
 }
