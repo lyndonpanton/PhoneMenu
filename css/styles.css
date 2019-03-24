@@ -4,6 +4,11 @@
 	font-family: 'Roboto', sans-serif;
 }
 
+::-webkit-scrollbar {
+	display: none;
+	background: transparent;
+}
+
 /* For setting percentage heights */
 html, body {
 	height: 100%;
