@@ -184,16 +184,18 @@ html, body {
 	background-color: #BB0044;
 	overflow: hidden;
 	text-align: center;
-	color: white;
+	color: #FFFFFF;
 	/*transition: all 2.5s error;*/
 }
 
 #error-message-text {
 	background-color: #BB00EE;
+	color: #FFFFFF;
 }
 
 #error-message-title {
 	background-color: #BB0099;
+	color: #FFFFFF;
 }
 
 #favourites {
