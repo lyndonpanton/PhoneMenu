@@ -198,6 +198,7 @@ html, body {
 	width: 85%;
 	height: 50%;
 	margin: 5% auto 0;
+	border-radius: 3%;
 	padding-top: 2%;
 	padding-right: 5%;
 	padding-left: 5%;
@@ -210,6 +211,7 @@ html, body {
 #error-message-title {
 	width: 60%;
 	height: 16%;
+	border-radius: 3%;
 	padding-top: 2%;
 	margin: 3% auto 0;
 	background-color: #BB00EE;
