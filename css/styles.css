@@ -191,7 +191,7 @@ html, body {
 	overflow: hidden;
 	text-align: center;
 	color: #FFFFFF;
-	/*transition: all 2.5s error;*/
+	/*animation: all 2.5s error;*/
 }
 
 #error-message-text {
@@ -258,5 +258,11 @@ html, body {
 }
 
 @keyframes error {
-	
+	0% {
+		visibility: hidden;
+	} 50% {
+		visibility: visible;
+	} 100% {
+		visibility: hidden;
+	}
 }
