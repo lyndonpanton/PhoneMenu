@@ -193,6 +193,8 @@ html, body {
 	height: 50%;
 	margin: 5% auto 0;
 	background-color: #BB00EE;
+	overflow-y: scroll;
+	word-wrap: break-word;
 	color: #FFFFFF;
 }
 
