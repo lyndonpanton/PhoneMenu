@@ -189,11 +189,17 @@ html, body {
 }
 
 #error-message-text {
+	width: 90%;
+	height: 50%;
+	margin: 5% auto 0;
 	background-color: #BB00EE;
 	color: #FFFFFF;
 }
 
 #error-message-title {
+	width: 60%;
+	height: 16%;
+	margin: 5% auto 0;
 	background-color: #BB0099;
 	color: #FFFFFF;
 }
