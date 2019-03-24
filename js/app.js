@@ -429,6 +429,16 @@ Array.from(padItems).forEach(function(pad) {
 	});
 });
 
+// Should receive error title and error message as arguments
+function error(title, message) {
+	let errorMessage = document.getElementById("error-message");
+	errorMessage.style.transition = "all 2.5s error";
+
+	setTimeout(function() {
+		errorMessage.style.transition = "none";
+	}, 2500);
+}
+
 let callIcon = document.getElementById("dialler-pad-call");
 callIcon.addEventListener("click", function() {
 	let recentCalls = document.getElementById("recent-calls");
