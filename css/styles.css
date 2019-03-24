@@ -195,9 +195,12 @@ html, body {
 }
 
 #error-message-text {
-	width: 90%;
+	width: 85%;
 	height: 50%;
 	margin: 5% auto 0;
+	padding-top: 2%;
+	padding-right: 5%;
+	padding-left: 5%;
 	background-color: #BB00EE;
 	overflow-y: scroll;
 	word-wrap: break-word;
