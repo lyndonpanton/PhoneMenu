@@ -134,7 +134,7 @@ html, body {
 
 #contacts {
 	height: 83%;
-	margin-top: 3%;
+	margin-top: 3px;
 	background-color: #FCFCFC;
 }
 
@@ -240,7 +240,7 @@ html, body {
 	justify-content: space-around;
 	list-style-type: none;
 	font-weight: 400;
-	padding-bottom: 2%;
+	padding-bottom: 4px;
 	border-bottom: 2px #EDEDED solid;
 }
 
