@@ -65,6 +65,7 @@ contactForm.addEventListener("submit", function(e) {
 	repeatName = "";
 
 	if (errorString.length) {
+		error("...", errorString);
 		console.log(errorString);
 		return false;
 	}
@@ -430,11 +431,11 @@ Array.from(padItems).forEach(function(pad) {
 });
 
 // Should receive error title and error message as arguments
-function error(title, message) {
+function error(title, text) {
 	let errorMessage = document.getElementById("error-message");
 
-	document.getElementById("error-message-title") = title;
-	document.getElementById("error-messgae-text") = text;
+	document.getElementById("error-message-title").textContent = title;
+	document.getElementById("error-message-text").textContent = text;
 
 	errorMessage.style.visibility = "visible";
 
