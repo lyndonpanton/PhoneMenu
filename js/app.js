@@ -53,20 +53,16 @@ contactForm.addEventListener("submit", function(e) {
 	let formSurname = document.getElementById("form-surname").value;
 	let formNumber = document.getElementById("form-number").value;
 
-	// let errorString = "";
 	let errorContainer = document.createElement("div");
 
-	// errorString += `${validateFirstName(formFirstName)}`;
 	let errorF = document.createElement("span");
 	errorF.className = "error-line";
 	errorF.textContent = `${validateFirstName(formFirstName)}`;
 
-	// errorString += `${validateSurname(formSurname)}`;
 	let errorS = document.createElement("span");
 	errorS.className = "error-line";
 	errorS.textContent = `${validateSurname(formSurname)}`;
 
-	// errorString += `${validateNumber(formNumber)}`;
 	let errorN = document.createElement("span");
 	errorN.className = "error-line";
 	errorN.textContent = `${validateNumber(formNumber)}`;
@@ -74,20 +70,19 @@ contactForm.addEventListener("submit", function(e) {
 	let errorFS = document.createElement("span");
 	errorFS.className = "error-line";
 	if (repeatName.length == 2) {
-		// errorString += "First name and surname combination already exists\n";
 		errorFS.textContent = "First name and surname combination already exists";
 	}
 
 	repeatName = "";
+
+	console.log
 
 	errorContainer.appendChild(errorF);
 	errorContainer.appendChild(errorS);
 	errorContainer.appendChild(errorN);
 
 	if (errorContainer.textContent.length) {
-		// error("...", errorString);
 		error(errorContainer);
-		console.log(typeof(errorContainer));
 		return false;
 	}
 
@@ -114,7 +109,6 @@ contactForm.addEventListener("submit", function(e) {
 			this.classList.remove("star-black");
 			this.classList.add("star-yellow");
 			starred.push(this.parentElement);
-			console.log(starred);
 
 			starred.sort(function(a, b) {
 				let name1 = a.getElementsByClassName("name")[0].textContent.toLowerCase();
@@ -135,7 +129,6 @@ contactForm.addEventListener("submit", function(e) {
 
 			starred.forEach(function(contact) {
 				let clone = contact.cloneNode(true);
-				// clone.id = `fav${starred.length}`;
 				clone.removeChild(clone.getElementsByClassName("remove")[0]);
 				favourites.appendChild(clone);
 			});
@@ -143,7 +136,6 @@ contactForm.addEventListener("submit", function(e) {
 			this.classList.remove("star-yellow");
 			this.classList.add("star-black");
 			starred.splice(starred.indexOf(this.parentElement), 1);
-			console.log(starred);
 
 			while (favourites.firstChild) {
 				favourites.removeChild(favourites.firstChild);
@@ -151,7 +143,6 @@ contactForm.addEventListener("submit", function(e) {
 
 			starred.forEach(function(contact) {
 				let clone = contact.cloneNode(true);
-				// clone.id = `fav${starred.length}`;
 				clone.removeChild(clone.getElementsByClassName("remove")[0]);
 				favourites.append(clone);
 			});
@@ -167,7 +158,7 @@ contactForm.addEventListener("submit", function(e) {
 		button.addEventListener("click", function() {
 			let parent = button.parentElement;
 			if (Array.from(parent.getElementsByClassName("star")[0].classList).indexOf("star-yellow") != -1) {
-				console.log("Favourite contacts cannot be deleted");
+				// error(<element>Favourite contacts cannot be deleted</element>);
 			} else {
 				let grandParent = button.parentElement.parentElement;
 				grandParent.removeChild(parent);
@@ -208,7 +199,6 @@ contactForm.addEventListener("submit", function(e) {
 	contact.appendChild(remove);
 
 	people.push(contact);
-	console.log(people);
 
 	people.sort(function(a, b) {
 		let name1 = a.getElementsByClassName("name")[0].textContent.toLowerCase();
@@ -220,11 +210,6 @@ contactForm.addEventListener("submit", function(e) {
 			return 1;
 		}
 	});
-
-	console.log(people);
-
-	// let contacts = document.getElementById("contacts");
-	// contacts.appendChild(contact);
 
 	let contacts = document.getElementsByClassName("contact");
 	Array.from(contacts).forEach(function(contact) {
