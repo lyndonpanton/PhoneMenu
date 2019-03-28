@@ -455,15 +455,21 @@ Array.from(padItems).forEach(function(pad) {
 function error(text) {
 	let errorMessage = document.getElementById("error-message");
 
-	document.getElementById("error-message-title").textContent = "Error!";
-	document.getElementById("error-message-text").appendChild(text);
+	let errorMessageTitle = document.getElementById("error-message-title");
+	errorMessageTitle.textContent = "Error!";
+
+	let errorMessageText = document.getElementById("error-message-text");
+	errorMessageText.appendChild(text);
 
 	errorMessage.style.visibility = "visible";
 
 	setTimeout(function() {
 		errorMessage.style.visibility = "hidden";
-		while(errorMessage.firstChild) {
-			errorMessage.removeChild(errorMessage.firstChild);
+		// Clear the error title
+		errorMessageTitle.textContent = "";
+		// Remove all error messages
+		while(errorMessageText.firstChild) {
+			errorMessageText.removeChild(errorMessageText.firstChild);
 		}
 	}, 2500);
 }
