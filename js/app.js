@@ -432,10 +432,14 @@ Array.from(padItems).forEach(function(pad) {
 // Should receive error title and error message as arguments
 function error(title, message) {
 	let errorMessage = document.getElementById("error-message");
-	errorMessage.style.transition = "all 2.5s error";
+
+	document.getElementById("error-message-title") = title;
+	document.getElementById("error-messgae-text") = text;
+
+	errorMessage.style.visibility = "visible";
 
 	setTimeout(function() {
-		errorMessage.style.transition = "none";
+		errorMessage.style.visibility = "hidden";
 	}, 2500);
 }
 
