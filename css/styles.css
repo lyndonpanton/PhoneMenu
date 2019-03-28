@@ -197,11 +197,11 @@ html, body {
 #error-message-text {
 	width: 85%;
 	height: 50%;
-	margin: 5% auto 0;
+	margin: 17px auto 0;
 	border-radius: 3%;
-	padding-top: 2%;
-	padding-right: 5%;
-	padding-left: 5%;
+	padding-top: 7px;
+	padding-right: 17px;
+	padding-left: 17px;
 	background-color: #BB00EE;
 	overflow-y: scroll;
 	word-wrap: break-word;
@@ -212,8 +212,8 @@ html, body {
 	width: 60%;
 	height: 16%;
 	border-radius: 3%;
-	padding-top: 2%;
-	margin: 3% auto 0;
+	padding-top: 7px;
+	margin: 11px auto 0;
 	background-color: #BB00EE;
 	color: #FFFFFF;
 }
