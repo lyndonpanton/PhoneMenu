@@ -31,6 +31,10 @@ html, body {
 	color: chartreuse; /* Temporary */
 }
 
+.error-line {
+	display: block;
+}
+
 .form-input {
 	width: 29%;
 	border-top: none;
