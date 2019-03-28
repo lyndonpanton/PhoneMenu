@@ -56,26 +56,26 @@ contactForm.addEventListener("submit", function(e) {
 	// let errorString = "";
 	let errorContainer = document.createElement("div");
 
-	errorString += `${validateFirstName(formFirstName)}`;
+	// errorString += `${validateFirstName(formFirstName)}`;
 	let errorF = document.createElement("span");
 	errorF.className = "error-line";
 	errorF.textContent = `${validateFirstName(formFirstName)}`;
 
-	errorString += `${validateSurname(formSurname)}`;
+	// errorString += `${validateSurname(formSurname)}`;
 	let errorS = document.createElement("span");
 	errorS.className = "error-line";
 	errorS.textContent = `${validateSurname(formSurname)}`;
 
-	errorString += `${validateNumber(formNumber)}`;
+	// errorString += `${validateNumber(formNumber)}`;
 	let errorN = document.createElement("span");
 	errorN.className = "error-line";
-	errorN.textContent = `${validateNumber(formNumber)}}`;
+	errorN.textContent = `${validateNumber(formNumber)}`;
 
 	let errorFS = document.createElement("span");
 	errorFS.className = "error-line";
 	if (repeatName.length == 2) {
-		errorString += "First name and surname combination already exists\n";
-		errorFS.textContent = "First name and surname combination already exists\n";
+		// errorString += "First name and surname combination already exists\n";
+		errorFS.textContent = "First name and surname combination already exists";
 	}
 
 	repeatName = "";
@@ -84,9 +84,10 @@ contactForm.addEventListener("submit", function(e) {
 	errorContainer.appendChild(errorS);
 	errorContainer.appendChild(errorN);
 
-	if (errorString.length) {
-		error("...", errorString);
-		console.log(errorString);
+	if (errorContainer.textContent.length) {
+		// error("...", errorString);
+		error(errorContainer);
+		console.log(typeof(errorContainer));
 		return false;
 	}
 
@@ -451,16 +452,19 @@ Array.from(padItems).forEach(function(pad) {
 });
 
 // Should receive error title and error message as arguments
-function error(title, text) {
+function error(text) {
 	let errorMessage = document.getElementById("error-message");
 
-	document.getElementById("error-message-title").textContent = title;
-	document.getElementById("error-message-text").textContent = text;
+	document.getElementById("error-message-title").textContent = "Error!";
+	document.getElementById("error-message-text").appendChild(text);
 
 	errorMessage.style.visibility = "visible";
 
 	setTimeout(function() {
 		errorMessage.style.visibility = "hidden";
+		while(errorMessage.firstChild) {
+			errorMessage.removeChild(errorMessage.firstChild);
+		}
 	}, 2500);
 }
 
