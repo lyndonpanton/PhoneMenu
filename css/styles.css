@@ -179,7 +179,7 @@ html, body {
 #error-message {
 	position: absolute;
 	display: block;
-	width: 80%;
+	max-width: 350px;
 	height: 20%;
 	top: 65%;
 	right: 0;
