@@ -53,16 +53,36 @@ contactForm.addEventListener("submit", function(e) {
 	let formSurname = document.getElementById("form-surname").value;
 	let formNumber = document.getElementById("form-number").value;
 
-	let errorString = "";
-	errorString += `${validateFirstName(formFirstName)}`;
-	errorString += `${validateSurname(formSurname)}`;
-	errorString += `${validateNumber(formNumber)}`;
+	// let errorString = "";
+	let errorContainer = document.createElement("div");
 
+	errorString += `${validateFirstName(formFirstName)}`;
+	let errorF = document.createElement("span");
+	errorF.className = "error-line";
+	errorF.textContent = `${validateFirstName(formFirstName)}`;
+
+	errorString += `${validateSurname(formSurname)}`;
+	let errorS = document.createElement("span");
+	errorS.className = "error-line";
+	errorS.textContent = `${validateSurname(formSurname)}`;
+
+	errorString += `${validateNumber(formNumber)}`;
+	let errorN = document.createElement("span");
+	errorN.className = "error-line";
+	errorN.textContent = `${validateNumber(formNumber)}}`;
+
+	let errorFS = document.createElement("span");
+	errorFS.className = "error-line";
 	if (repeatName.length == 2) {
 		errorString += "First name and surname combination already exists\n";
+		errorFS.textContent = "First name and surname combination already exists\n";
 	}
 
 	repeatName = "";
+
+	errorContainer.appendChild(errorF);
+	errorContainer.appendChild(errorS);
+	errorContainer.appendChild(errorN);
 
 	if (errorString.length) {
 		error("...", errorString);
