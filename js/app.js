@@ -477,9 +477,19 @@ callIcon.addEventListener("click", function() {
 		callNumber.className = "number";
 		callNumber.textContent = number;
 
+		let date = document.createElement("span");
+		date.className = "date";
+		date.textContent = `${(new Date()).getDate()}/${(new Date()).getMonth() + 1}/${String((new Date()).getFullYear()).slice(2)}`;
+
+		let time = document.createElement("span");
+		time.class = "time";
+		time.textContent = `${(new Date()).getHours()}:${(new Date()).getMinutes()}:${(new Date()).getSeconds()}`;
+
 		let callDateTime = document.createElement("span");
 		callDateTime.className = "date-time";
-		callDateTime.textContent = `${(new Date()).getDate()}/${(new Date()).getMonth() + 1}/${String((new Date()).getFullYear()).slice(2)} ${(new Date()).getHours()}:${(new Date()).getMinutes()}:${(new Date()).getSeconds()}`;
+		// callDateTime.textContent = `${(new Date()).getDate()}/${(new Date()).getMonth() + 1}/${String((new Date()).getFullYear()).slice(2)} ${(new Date()).getHours()}:${(new Date()).getMinutes()}:${(new Date()).getSeconds()}`;
+		callDateTime.appendChild(date);
+		callDateTime.appendChild(time);
 
 		callInfo.appendChild(callIcon);
 		callInfo.appendChild(callNumber);
