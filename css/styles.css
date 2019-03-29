@@ -16,7 +16,8 @@ html, body {
 }
 
 .call-info {
-	
+	display: flex;
+	flex-direction: row;
 }
 
 .call-info-avatar {
