@@ -18,6 +18,10 @@ html, body {
 .call-info {
 	display: flex;
 	flex-direction: row;
+	/* Later try to get the avatar to the right, 
+	the name/number to the right 
+	and the call date/time to the very left */
+	justify-content: space-between;
 }
 
 .call-info-avatar {
