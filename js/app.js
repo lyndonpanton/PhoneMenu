@@ -473,9 +473,25 @@ callIcon.addEventListener("click", function() {
 		callIcon.className = "avatar";
 		callIcon.style.backgroundColor = colors[Math.floor(Math.random() * 24)];
 
+		let callNameNumber = document.createElement("span");
+		callNameNumber.className = "name-number";
+
+		let callName = document.createElement("span");
+		callName.className = "name";
+		// 
+		if (0) { // Name exists in contacts
+			// callName.textContent = `${The name of that contact}`;
+			callName.textContent = "...";
+		} else {
+			callName.textContent = "Unknown";
+		}
+
 		let callNumber = document.createElement("span");
 		callNumber.className = "number";
 		callNumber.textContent = number;
+
+		callNameNumber.appendChild(callName);
+		callNameNumber.appendChild(callNumber);
 
 		let date = document.createElement("span");
 		date.className = "date";
@@ -492,7 +508,9 @@ callIcon.addEventListener("click", function() {
 		callDateTime.appendChild(time);
 
 		callInfo.appendChild(callIcon);
-		callInfo.appendChild(callNumber);
+		callInfo.appendChild(callNameNumber)
+		// callInfo.appendChild(callName);
+		// callInfo.appendChild(callNumber);
 		callInfo.appendChild(callDateTime);
 
 		recentCalls.appendChild(callInfo);
