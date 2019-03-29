@@ -15,20 +15,44 @@ html, body {
 	height: 100%;
 }
 
-.avatar {
+.call-info {
+	
+}
+
+.call-info-avatar {
 	display: inline-block;
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
 }
 
-.contact {
-	height: 10%;
-	border-bottom: 1px #EDEDED solid;
+.call-info-date {
+
 }
 
 .call-info-date-time {
 	color: chartreuse; /* Temporary */
+}
+
+.call-info-name {
+
+}
+
+.call-info-name-number {
+
+}
+
+.call-info-number {
+
+}
+
+.call-info-time {
+
+}
+
+.contact {
+	height: 10%;
+	border-bottom: 1px #EDEDED solid;
 }
 
 .error-line {
