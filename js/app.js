@@ -479,7 +479,7 @@ callIcon.addEventListener("click", function() {
 
 		let callDateTime = document.createElement("span");
 		callDateTime.className = "date-time";
-		callDateTime.textContent = (new Date());
+		callDateTime.textContent = `${(new Date()).getDate()}/${(new Date()).getMonth() + 1}/${String((new Date()).getFullYear()).slice(2)} ${(new Date()).getHours()}:${(new Date()).getMinutes()}:${(new Date()).getSeconds()}`;
 
 		callInfo.appendChild(callIcon);
 		callInfo.appendChild(callNumber);
