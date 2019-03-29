@@ -189,13 +189,12 @@ html, body {
 	right: 0;
 	left: 0;
 	margin: 0 auto;
-	visibility: visible; /* initially hidden */
+	visibility: hidden;
 	border-radius: 3%;
 	background-color: #BB0044;
 	overflow: hidden;
 	text-align: center;
 	color: #FFFFFF;
-	/*animation: all 2.5s error;*/
 }
 
 #error-message-text {
@@ -259,14 +258,4 @@ html, body {
 	border-top: 2px #DDDDDD solid;
 	font-size: 40px;
 	color: #888888;
-}
-
-@keyframes error {
-	0% {
-		visibility: hidden;
-	} 50% {
-		visibility: visible;
-	} 100% {
-		visibility: hidden;
-	}
 }
