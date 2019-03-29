@@ -503,8 +503,8 @@ callIcon.addEventListener("click", function() {
 
 		let time = document.createElement("span");
 		time.className = "call-info-time";
-		time.textContent = `${(new Date()).getHours()}:${(new Date()).getMinutes()}:${(new Date()).getSeconds()}`;
-		// callDateTime.textContent = `${(new Date()).getDate()}/${(new Date()).getMonth() + 1}/${String((new Date()).getFullYear()).slice(2)} ${(new Date()).getHours()}:${(new Date()).getMinutes()}:${(new Date()).getSeconds()}`;
+		time.textContent = `${(new Date()).getHours()}:${(new Date()).getMinutes()}`;
+
 		callDateTime.appendChild(date);
 		callDateTime.appendChild(time);
 
