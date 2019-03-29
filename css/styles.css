@@ -34,32 +34,28 @@ html, body {
 
 .call-info-date {
 	display: block;
-
+	color: #000000;
 }
 
 .call-info-date-time {
 	display: block;
-	color: chartreuse; /* Temporary */
 }
 
 .call-info-name {
 	display: block;
-
 }
 
 .call-info-name-number {
 	display: block;
-
 }
 
 .call-info-number {
 	display: block;
-
 }
 
 .call-info-time {
 	display: block;
-
+	color: #000000;
 }
 
 .contact {
