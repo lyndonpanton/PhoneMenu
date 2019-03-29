@@ -502,7 +502,7 @@ callIcon.addEventListener("click", function() {
 		date.textContent = `${(new Date()).getDate()}/${(new Date()).getMonth() + 1}/${String((new Date()).getFullYear()).slice(2)}`;
 
 		let time = document.createElement("span");
-		time.class = "call-info-time";
+		time.className = "call-info-time";
 		time.textContent = `${(new Date()).getHours()}:${(new Date()).getMinutes()}:${(new Date()).getSeconds()}`;
 		// callDateTime.textContent = `${(new Date()).getDate()}/${(new Date()).getMonth() + 1}/${String((new Date()).getFullYear()).slice(2)} ${(new Date()).getHours()}:${(new Date()).getMinutes()}:${(new Date()).getSeconds()}`;
 		callDateTime.appendChild(date);
