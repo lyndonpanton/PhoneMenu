@@ -470,6 +470,8 @@ callIcon.addEventListener("click", function() {
 		let callInfo = document.createElement("div");
 		callInfo.className = "call-info";
 
+		// Add event listener so when a number is called
+		// the number input is cleared
 		let callIcon = document.createElement("span");
 		callIcon.className = "call-info-avatar";
 		callIcon.style.backgroundColor = colors[Math.floor(Math.random() * 24)];
@@ -490,6 +492,15 @@ callIcon.addEventListener("click", function() {
 		let callNumber = document.createElement("span");
 		callNumber.className = "call-info-number";
 		callNumber.textContent = number;
+
+		Array.from(document.getElementsByClassName("number")).forEach(function(numberSpan) {
+			if (numberSpan.textContent == number) {
+				callName.textContent = numberSpan.parentElement.getElementsByClassName("name")[0].textContent;
+				return;
+			} else {
+				callName.textContent = "Unknown";
+			}
+		});
 
 		callNameNumber.appendChild(callName);
 		callNameNumber.appendChild(callNumber);
