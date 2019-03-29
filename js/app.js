@@ -468,6 +468,7 @@ callIcon.addEventListener("click", function() {
 
 	} else { // If there is no contact with that number...
 		let callInfo = document.createElement("div");
+		callInfo.className = "call-info";
 
 		let callIcon = document.createElement("span");
 		callIcon.className = "avatar";
