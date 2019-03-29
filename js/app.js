@@ -471,14 +471,14 @@ callIcon.addEventListener("click", function() {
 		callInfo.className = "call-info";
 
 		let callIcon = document.createElement("span");
-		callIcon.className = "avatar";
+		callIcon.className = "call-info-avatar";
 		callIcon.style.backgroundColor = colors[Math.floor(Math.random() * 24)];
 
 		let callNameNumber = document.createElement("span");
-		callNameNumber.className = "name-number";
+		callNameNumber.className = "call-info-name-number";
 
 		let callName = document.createElement("span");
-		callName.className = "name";
+		callName.className = "call-info-name";
 		// 
 		if (0) { // Name exists in contacts
 			// callName.textContent = `${The name of that contact}`;
@@ -488,22 +488,22 @@ callIcon.addEventListener("click", function() {
 		}
 
 		let callNumber = document.createElement("span");
-		callNumber.className = "number";
+		callNumber.className = "call-info-number";
 		callNumber.textContent = number;
 
 		callNameNumber.appendChild(callName);
 		callNameNumber.appendChild(callNumber);
 
+		let callDateTime = document.createElement("span");
+		callDateTime.className = "call-info-date-time";
+
 		let date = document.createElement("span");
-		date.className = "date";
+		date.className = "call-info-date";
 		date.textContent = `${(new Date()).getDate()}/${(new Date()).getMonth() + 1}/${String((new Date()).getFullYear()).slice(2)}`;
 
 		let time = document.createElement("span");
-		time.class = "time";
+		time.class = "call-info-time";
 		time.textContent = `${(new Date()).getHours()}:${(new Date()).getMinutes()}:${(new Date()).getSeconds()}`;
-
-		let callDateTime = document.createElement("span");
-		callDateTime.className = "date-time";
 		// callDateTime.textContent = `${(new Date()).getDate()}/${(new Date()).getMonth() + 1}/${String((new Date()).getFullYear()).slice(2)} ${(new Date()).getHours()}:${(new Date()).getMinutes()}:${(new Date()).getSeconds()}`;
 		callDateTime.appendChild(date);
 		callDateTime.appendChild(time);
