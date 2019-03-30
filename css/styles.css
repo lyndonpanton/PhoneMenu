@@ -15,11 +15,41 @@ html, body {
 	height: 100%;
 }
 
-.avatar {
+.contact-avatar {
 	display: inline-block;
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
+}
+
+.contact-name {
+
+}
+
+.contact-name-number {
+
+}
+
+.contact-number {
+
+}
+
+.contact-remove {
+
+}
+
+.contact-star {
+	margin-top: 20px;
+	margin-left: 20%;
+	font-size: 24px;
+}
+
+.contact-star-black {
+	color: #000000;
+}
+
+.contact-star-yellow {
+	color: hsla(48, 100%, 50%, 1);
 }
 
 .call-info {
@@ -142,20 +172,6 @@ html, body {
 .selected {
 	border-bottom: 2px hsla(208, 100%, 50%, 1) solid;
 	color: hsla(208, 100%, 50%, 1);
-}
-
-.star {
-	margin-top: 20px;
-	margin-left: 20%;
-	font-size: 24px;
-}
-
-.star-black {
-	color: #000000;
-}
-
-.star-yellow {
-	color: hsla(48, 100%, 50%, 1);
 }
 
 #add-contact {
