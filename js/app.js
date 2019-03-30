@@ -100,12 +100,12 @@ contactForm.addEventListener("submit", function(e) {
 	contactNumber.textContent = `${formNumber}`;
 
 	let contactStar = document.createElement("span");
-	contactStar.className = "star star-black";
+	contactStar.className = "contact-star contact-star-black";
 	contactStar.textContent = "\u2605";
 	contactStar.addEventListener("click", function() {
-		if (Array.from(this.classList).indexOf("star-black") != -1) {
-			this.classList.remove("star-black");
-			this.classList.add("star-yellow");
+		if (Array.from(this.classList).indexOf("contact-star-black") != -1) {
+			this.classList.remove("contact-star-black");
+			this.classList.add("contact-star-yellow");
 			starred.push(this.parentElement);
 
 			starred.sort(function(a, b) {
@@ -131,8 +131,8 @@ contactForm.addEventListener("submit", function(e) {
 				favourites.appendChild(clone);
 			});
 		} else {
-			this.classList.remove("star-yellow");
-			this.classList.add("star-black");
+			this.classList.remove("contact-star-yellow");
+			this.classList.add("contact-star-black");
 			starred.splice(starred.indexOf(this.parentElement), 1);
 
 			while (favourites.firstChild) {
