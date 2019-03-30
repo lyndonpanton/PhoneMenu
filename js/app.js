@@ -528,6 +528,6 @@ callIcon.addEventListener("click", function() {
 		// callInfo.appendChild(callNumber);
 		callInfo.appendChild(callDateTime);
 
-		recentCalls.appendChild(callInfo);
+		recentCalls.prepend(callInfo);
 	}
 });
