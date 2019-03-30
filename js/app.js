@@ -156,7 +156,21 @@ contactForm.addEventListener("submit", function(e) {
 		button.addEventListener("click", function() {
 			let parent = button.parentElement;
 			if (Array.from(parent.getElementsByClassName("star")[0].classList).indexOf("star-yellow") != -1) {
-				// error(<element>Favourite contacts cannot be deleted</element>);
+				// let errorContainer = document.createElement("div");
+				// let errorMessage = document.createElement("span");
+				// errorMessage.className = "error-line";
+
+				// errorMessage.textContent = "Starred contacts cannot be deleted";
+				// console.log(errorContainer);
+				// errorContainer.appendChild(errorMessage);
+
+				// // So the error message only is displayed once,
+				// // rather than once for every contact that has been added
+				// while (errorContainer.firstChild && Array.from(errorContainer.children).length > 1) {
+				// 	errorContainer.removeChild(errorContainer.firstChild);
+				// }
+
+				// error(errorContainer);
 			} else {
 				let grandParent = button.parentElement.parentElement;
 				grandParent.removeChild(parent);
@@ -434,7 +448,7 @@ Array.from(padItems).forEach(function(pad) {
 	});
 });
 
-// Should receive error title and error message as arguments
+// Should receive error text as an argument
 function error(text) {
 	let errorMessage = document.getElementById("error-message");
 
