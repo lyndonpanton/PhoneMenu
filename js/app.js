@@ -462,7 +462,7 @@ function error(text) {
 let callIcon = document.getElementById("dialler-pad-call");
 callIcon.addEventListener("click", function() {
 	let recentCalls = document.getElementById("recent-calls");
-	let number = document.getElementById("display").textContent;
+	let number = document.getElementById("display");
 	// If contact with that number exists...
 	if (0) {
 
@@ -491,10 +491,10 @@ callIcon.addEventListener("click", function() {
 
 		let callNumber = document.createElement("span");
 		callNumber.className = "call-info-number";
-		callNumber.textContent = number;
+		callNumber.textContent = number.textContent;
 
 		Array.from(document.getElementsByClassName("number")).forEach(function(numberSpan) {
-			if (numberSpan.textContent == number) {
+			if (numberSpan.textContent == number.textContent) {
 				callName.textContent = numberSpan.parentElement.getElementsByClassName("name")[0].textContent;
 				return;
 			} else {
@@ -515,6 +515,9 @@ callIcon.addEventListener("click", function() {
 		let time = document.createElement("span");
 		time.className = "call-info-time";
 		time.textContent = `${(new Date()).getHours()}:${(new Date()).getMinutes()}`;
+
+		// Clear the number display
+		number.textContent = "";
 
 		callDateTime.appendChild(date);
 		callDateTime.appendChild(time);
