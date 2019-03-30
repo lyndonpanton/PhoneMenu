@@ -69,6 +69,13 @@ html, body {
 }
 
 .contact {
+	display: flex;
+	margin-top: 5px;
+	flex-direction: row;
+	/* Later try to get the avatar to the right, 
+	the name/number to the right 
+	and the call date/time to the very left */
+	justify-content: space-between;
 	height: 10%;
 	border-bottom: 1px #EDEDED solid;
 }
