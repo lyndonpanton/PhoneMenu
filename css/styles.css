@@ -189,11 +189,12 @@ html, body {
 	display: grid;
 	grid-template-rows: 20% 20% 20% 20% 25%;
 	grid-template-columns: 1fr  1fr 1fr;
-	height: 90%;
-	top: 25%;
+	margin: 0;
+	height: 74%;
 	z-index: 1;
 	border: 1px solid #EDEDED;
 	border-radius: 2%;
+	padding: 0;
 	background-color: #FFFFFF;
 	text-align: center;
 	font-size: 30px;
@@ -207,6 +208,7 @@ html, body {
 #display {
 	height: 8%;
 	width: 100%;
+	margin: 0;
 	border: 2px #EEEEEE solid;
 	border-radius: 4%;
 	background-color: #FFFFFF;
@@ -293,4 +295,13 @@ html, body {
 	border-top: 2px #DDDDDD solid;
 	font-size: 40px;
 	color: #888888;
+}
+
+#recent-calls {
+	position: relative;
+	height: 40%;
+	max-height: 40%;
+	margin: 10px 0 0 0;
+	padding: 0;
+	overflow-y: scroll;
 }
