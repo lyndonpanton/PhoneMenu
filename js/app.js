@@ -510,7 +510,22 @@ callIcon.addEventListener("click", function() {
 
 		let date = document.createElement("span");
 		date.className = "call-info-date";
-		date.textContent = `${(new Date()).getDate()}/${(new Date()).getMonth() + 1}/${String((new Date()).getFullYear()).slice(2)}`;
+
+		let dateDay;
+		if ((new Date()).getDate() < 10) {
+			dateDay = `0${(new Date()).getDate()}`;
+		} else {
+			dateDay = `${(new Date()).getDate()}`;
+		}
+
+		let dateMonth;
+		if (((new Date()).getMonth() + 1) < 10) {
+			dateMonth = `0${(new Date()).getMonth() + 1}`;
+		} else {
+			dateMonth = `${(new Date()).getMonth() + 1}`;
+		}
+
+		date.textContent = `${dateDay}/${dateMonth}/${String((new Date()).getFullYear()).slice(2)}`;
 
 		let time = document.createElement("span");
 		time.className = "call-info-time";
@@ -524,8 +539,7 @@ callIcon.addEventListener("click", function() {
 
 		callInfo.appendChild(callIcon);
 		callInfo.appendChild(callNameNumber)
-		// callInfo.appendChild(callName);
-		// callInfo.appendChild(callNumber);
+
 		callInfo.appendChild(callDateTime);
 
 		recentCalls.prepend(callInfo);
