@@ -75,8 +75,6 @@ contactForm.addEventListener("submit", function(e) {
 
 	repeatName = "";
 
-	console.log
-
 	errorContainer.appendChild(errorF);
 	errorContainer.appendChild(errorS);
 	errorContainer.appendChild(errorN);
@@ -89,22 +87,22 @@ contactForm.addEventListener("submit", function(e) {
 	let contact = document.createElement("div");
 	contact.className = "contact";
 
-	let avatar = document.createElement("span");
-	avatar.className = "avatar";
-	avatar.style.backgroundColor = colors[Math.floor(Math.random() * 24)];
+	let contactAvatar = document.createElement("span");
+	contactAvatar.className = "avatar";
+	contactAvatar.style.backgroundColor = colors[Math.floor(Math.random() * 24)];
 
-	let name = document.createElement("span");
-	name.className = "name";
-	name.textContent = `${formFirstName} ${formSurname}`;
+	let contactName = document.createElement("span");
+	contactName.className = "name";
+	contactName.textContent = `${formFirstName} ${formSurname}`;
 
-	let number = document.createElement("span");
-	number.className = "number";
-	number.textContent = `${formNumber}`;
+	let contactNumber = document.createElement("span");
+	contactNumber.className = "number";
+	contactNumber.textContent = `${formNumber}`;
 
-	let star = document.createElement("span");
-	star.className = "star star-black";
-	star.textContent = "\u2605";
-	star.addEventListener("click", function() {
+	let contactStar = document.createElement("span");
+	contactStar.className = "star star-black";
+	contactStar.textContent = "\u2605";
+	contactStar.addEventListener("click", function() {
 		if (Array.from(this.classList).indexOf("star-black") != -1) {
 			this.classList.remove("star-black");
 			this.classList.add("star-yellow");
@@ -149,11 +147,11 @@ contactForm.addEventListener("submit", function(e) {
 		}
 	});
 
-	let remove = document.createElement("div");
-	remove.className = "remove";
-	remove.textContent = "\u00D7";
+	let contactRemoveButton = document.createElement("div");
+	contactRemoveButton.className = "remove";
+	contactRemoveButton.textContent = "\u00D7";
 
-	removeButtons.push(remove);
+	removeButtons.push(contactRemoveButton);
 	removeButtons.forEach(function(button) {
 		button.addEventListener("click", function() {
 			let parent = button.parentElement;
@@ -192,11 +190,11 @@ contactForm.addEventListener("submit", function(e) {
 		});
 	});
 
-	contact.appendChild(avatar);
-	contact.appendChild(name);
-	contact.appendChild(number);
-	contact.appendChild(star);
-	contact.appendChild(remove);
+	contact.appendChild(contactAvatar);
+	contact.appendChild(contactName);
+	contact.appendChild(contactNumber);
+	contact.appendChild(contactStar);
+	contact.appendChild(contactRemoveButton);
 
 	people.push(contact);
 
