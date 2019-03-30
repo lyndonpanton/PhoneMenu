@@ -88,15 +88,15 @@ contactForm.addEventListener("submit", function(e) {
 	contact.className = "contact";
 
 	let contactAvatar = document.createElement("span");
-	contactAvatar.className = "avatar";
+	contactAvatar.className = "contact-avatar";
 	contactAvatar.style.backgroundColor = colors[Math.floor(Math.random() * 24)];
 
 	let contactName = document.createElement("span");
-	contactName.className = "name";
+	contactName.className = "contact-name";
 	contactName.textContent = `${formFirstName} ${formSurname}`;
 
 	let contactNumber = document.createElement("span");
-	contactNumber.className = "number";
+	contactNumber.className = "contact-number";
 	contactNumber.textContent = `${formNumber}`;
 
 	let contactStar = document.createElement("span");
@@ -109,8 +109,8 @@ contactForm.addEventListener("submit", function(e) {
 			starred.push(this.parentElement);
 
 			starred.sort(function(a, b) {
-				let name1 = a.getElementsByClassName("name")[0].textContent.toLowerCase();
-				let name2 = b.getElementsByClassName("name")[0].textContent.toLowerCase();
+				let name1 = a.getElementsByClassName("contact-name")[0].textContent.toLowerCase();
+				let name2 = b.getElementsByClassName("contact-name")[0].textContent.toLowerCase();
 
 				if (name1 < name2) {
 					return -1;
@@ -148,7 +148,7 @@ contactForm.addEventListener("submit", function(e) {
 	});
 
 	let contactRemoveButton = document.createElement("div");
-	contactRemoveButton.className = "remove";
+	contactRemoveButton.className = "contact-remove";
 	contactRemoveButton.textContent = "\u00D7";
 
 	removeButtons.push(contactRemoveButton);
@@ -213,8 +213,8 @@ contactForm.addEventListener("submit", function(e) {
 	people.push(contact);
 
 	people.sort(function(a, b) {
-		let name1 = a.getElementsByClassName("name")[0].textContent.toLowerCase();
-		let name2 = b.getElementsByClassName("name")[0].textContent.toLowerCase();
+		let name1 = a.getElementsByClassName("contact-name")[0].textContent.toLowerCase();
+		let name2 = b.getElementsByClassName("contact-name")[0].textContent.toLowerCase();
 
 		if (name1 < name2) {
 			return -1;
