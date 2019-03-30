@@ -529,7 +529,22 @@ callIcon.addEventListener("click", function() {
 
 		let time = document.createElement("span");
 		time.className = "call-info-time";
-		time.textContent = `${(new Date()).getHours()}:${(new Date()).getMinutes()}`;
+
+		let timeMinutes;
+		if ((new Date()).getMinutes() < 10) {
+			timeMinutes = `0${(new Date()).getMinutes()}`;
+		} else {
+			timeMinutes = `${(new Date()).getMinutes()}`;
+		}
+
+		let timeHours;
+		if ((new Date()).getHours() < 10) {
+			timeHours = `0${(new Date()).getHours()}`;
+		} else {
+			timeHours = `${(new Date()).getHours()}`;
+		}
+
+		time.textContent = `${timeHours}:${timeMinutes}`;
 
 		// Clear the number display
 		number.textContent = "";
