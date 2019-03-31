@@ -23,7 +23,7 @@ html, body {
 	the name/number to the right 
 	and the call date/time to the very left */
 	justify-content: space-between;
-	height: 10%;
+	height: 40px;
 }
 
 .contact-avatar {
