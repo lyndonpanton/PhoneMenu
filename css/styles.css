@@ -24,6 +24,8 @@ html, body {
 	and the call date/time to the very left */
 	justify-content: space-between;
 	height: 40px;
+	border-bottom: 1px #EDEDED solid;
+	padding-bottom: 5px;
 }
 
 .contact-avatar {
