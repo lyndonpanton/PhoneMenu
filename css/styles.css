@@ -27,26 +27,27 @@ html, body {
 }
 
 .contact-avatar {
-	display: inline-block;
+	display: block;
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
 }
 
 .contact-name {
-
+	display: block;
 }
 
 .contact-name-number {
-
+	display: block;
 }
 
 .contact-number {
-
+	display: block;
 }
 
 .contact-remove {
-	float: right;
+	display: block;
+/*	float: right;
 	margin-top: 20px;
 	margin-right: 10%;
 	width: 20px;
@@ -55,10 +56,11 @@ html, body {
 	background-color: #FF0000;
 	text-align: center;
 	color: #FFFFFF;
-	font-size: 20px;
+	font-size: 20px;*/
 }
 
 .contact-star {
+	display: block;
 	margin-top: 20px;
 	margin-left: 20%;
 	font-size: 24px;
