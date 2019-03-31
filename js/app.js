@@ -332,7 +332,7 @@ function validateFirstName(fn) {
 		let contacts = document.getElementsByClassName("contact");
 		if (Array.from(contacts).length > 0) {
 			Array.from(contacts).forEach(function(contact) {
-				if (fn == contact.getElementsByClassName("name")[0].textContent.split(" ")[0]) {
+				if (fn == contact.getElementsByClassName("contact-name")[0].textContent.split(" ")[0]) {
 					repeatName += "X";
 				}
 			});
@@ -356,7 +356,7 @@ function validateSurname(sn) {
 		let contacts = document.getElementsByClassName("contact");
 		if (Array.from(contacts).length > 0) {
 			Array.from(contacts).forEach(function(contact) {
-				if (sn == contact.getElementsByClassName("name")[0].textContent.split(" ")[1]) {
+				if (sn == contact.getElementsByClassName("contact-name")[0].textContent.split(" ")[1]) {
 					repeatName += "X";
 				}
 			});
@@ -381,7 +381,7 @@ function validateNumber(n) {
 		let repeatNumber = 0;
 		if (Array.from(contacts).length > 0) {
 			Array.from(contacts).forEach(function(contact) {
-				if (n == contact.getElementsByClassName("number")[0].textContent) {
+				if (n == contact.getElementsByClassName("contact-number")[0].textContent) {
 					repeatNumber = 1;
 				}
 			});
