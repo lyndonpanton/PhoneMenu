@@ -505,9 +505,9 @@ callIcon.addEventListener("click", function() {
 		callNumber.className = "call-info-number";
 		callNumber.textContent = number.textContent;
 
-		Array.from(document.getElementsByClassName("number")).forEach(function(numberSpan) {
+		Array.from(document.getElementsByClassName("contact-number")).forEach(function(numberSpan) {
 			if (numberSpan.textContent == number.textContent) {
-				callName.textContent = numberSpan.parentElement.getElementsByClassName("name")[0].textContent;
+				callName.textContent = numberSpan.parentElement.getElementsByClassName("contact-name")[0].textContent;
 				return;
 			} else {
 				callName.textContent = "Unknown";
