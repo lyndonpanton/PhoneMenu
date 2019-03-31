@@ -46,7 +46,16 @@ html, body {
 }
 
 .contact-remove {
-
+	float: right;
+	margin-top: 20px;
+	margin-right: 10%;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #FF0000;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 20px;
 }
 
 .contact-star {
@@ -155,19 +164,6 @@ html, body {
 
 .pad-blue {
 	color: #0055FF;
-}
-
-.remove {
-	float: right;
-	margin-top: 20px;
-	margin-right: 10%;
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	background-color: #FF0000;
-	text-align: center;
-	color: #FFFFFF;
-	font-size: 20px;
 }
 
 .selected {
