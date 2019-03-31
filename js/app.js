@@ -132,7 +132,7 @@ contactForm.addEventListener("submit", function(e) {
 
 			starred.forEach(function(contact) {
 				let clone = contact.cloneNode(true);
-				clone.removeChild(clone.getElementsByClassName("remove")[0]);
+				clone.removeChild(clone.getElementsByClassName("contact-remove")[0]);
 				favourites.appendChild(clone);
 			});
 		} else {
@@ -146,7 +146,7 @@ contactForm.addEventListener("submit", function(e) {
 
 			starred.forEach(function(contact) {
 				let clone = contact.cloneNode(true);
-				clone.removeChild(clone.getElementsByClassName("remove")[0]);
+				clone.removeChild(clone.getElementsByClassName("contact-remove")[0]);
 				favourites.append(clone);
 			});
 		}
@@ -160,7 +160,7 @@ contactForm.addEventListener("submit", function(e) {
 	removeButtons.forEach(function(button) {
 		button.addEventListener("click", function() {
 			let parent = button.parentElement;
-			if (Array.from(parent.getElementsByClassName("star")[0].classList).indexOf("star-yellow") != -1) {
+			if (Array.from(parent.getElementsByClassName("contact-star")[0].classList).indexOf("contact-star-yellow") != -1) {
 				// let errorContainer = document.createElement("div");
 				// let errorMessage = document.createElement("span");
 				// errorMessage.className = "error-line";
