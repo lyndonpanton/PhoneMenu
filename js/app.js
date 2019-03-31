@@ -91,6 +91,8 @@ contactForm.addEventListener("submit", function(e) {
 	contactAvatar.className = "contact-avatar";
 	contactAvatar.style.backgroundColor = colors[Math.floor(Math.random() * 24)];
 
+	let contactNameNumber = document.createElement("span");
+
 	let contactName = document.createElement("span");
 	contactName.className = "contact-name";
 	contactName.textContent = `${formFirstName} ${formSurname}`;
@@ -98,6 +100,9 @@ contactForm.addEventListener("submit", function(e) {
 	let contactNumber = document.createElement("span");
 	contactNumber.className = "contact-number";
 	contactNumber.textContent = `${formNumber}`;
+
+	contactNameNumber.appendChild(contactName);
+	contactNameNumber.appendChild(contactNumber);
 
 	let contactStar = document.createElement("span");
 	contactStar.className = "contact-star contact-star-black";
@@ -205,8 +210,9 @@ contactForm.addEventListener("submit", function(e) {
 	});
 
 	contact.appendChild(contactAvatar);
-	contact.appendChild(contactName);
-	contact.appendChild(contactNumber);
+	// contact.appendChild(contactName);
+	// contact.appendChild(contactNumber);
+	contact.appendChild(contactNameNumber);
 	contact.appendChild(contactStar);
 	contact.appendChild(contactRemoveButton);
 
