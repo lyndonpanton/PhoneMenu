@@ -499,26 +499,25 @@ callIcon.addEventListener("click", function() {
 
 		let callName = document.createElement("span");
 		callName.className = "call-info-name";
-		// 
-		if (0) { // Name exists in contacts
-			// callName.textContent = `${The name of that contact}`;
-			callName.textContent = "...";
-		} else {
-			callName.textContent = "Unknown";
-		}
 
 		let callNumber = document.createElement("span");
 		callNumber.className = "call-info-number";
 		callNumber.textContent = number.textContent;
 
-		Array.from(document.getElementsByClassName("contact-number")).forEach(function(numberSpan) {
-			if (numberSpan.textContent == number.textContent) {
-				callName.textContent = numberSpan.parentElement.getElementsByClassName("contact-name")[0].textContent;
-				return;
-			} else {
-				callName.textContent = "Unknown";
-			}
-		});
+		if (Array.from(document.getElementsByClassName("contact-number")).length != 0) {
+			Array.from(document.getElementsByClassName("contact-number")).forEach(function(numberSpan) {
+				if (numberSpan.textContent == number.textContent) {
+					console.log("..");
+					callName.textContent = numberSpan.parentElement.parentElement.getElementsByClassName("contact-name")[0].textContent;
+					return;
+				} else {
+					console.log("...");
+					callName.textContent = "Unknown";
+				}
+			});
+		} else {
+			callName.textContent = "Unknown";
+		}
 
 		callNameNumber.appendChild(callName);
 		callNameNumber.appendChild(callNumber);
