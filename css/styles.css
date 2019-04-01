@@ -37,6 +37,7 @@ html, body {
 
 .contact-name {
 	display: block;
+	text-align: left;
 }
 
 .contact-name-number {
@@ -45,6 +46,7 @@ html, body {
 
 .contact-number {
 	display: block;
+	text-align: left;
 }
 
 .contact-remove {
@@ -104,6 +106,7 @@ html, body {
 
 .call-info-name {
 	display: block;
+	text-align: left;
 }
 
 .call-info-name-number {
@@ -112,6 +115,7 @@ html, body {
 
 .call-info-number {
 	display: block;
+	text-align: left;
 }
 
 .call-info-time {
