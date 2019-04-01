@@ -8,13 +8,17 @@
 
 ### How To Use
 - Dialler
-	- Use dialler pad to enter a number
+	- Use dialler pad to enter or remove a number
 	- Use call icon to be redirected to the device's phone app with that number
-	- Use down chevron to minimize the dialler pad
 - Contacts
 	- Fill in the desired contacts details
 	- Press the _+_ icon to add the contact
-
+	- Press a contact's star icon to add it to the favourites section
+	- Press a contact's cross icon to remove the contact
+	- Contacts that have been added to the favourites section cannot be removed
+- Favourites
+	- This is a list of all contacts the have been favourited in alphabetical order (ascending)
+	
 ### Requirements
 > 1. This projects requires a browser to run
 > 2. The browser must have Javascript available and enabled
