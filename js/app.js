@@ -505,14 +505,14 @@ callIcon.addEventListener("click", function() {
 		callNumber.textContent = number.textContent;
 
 		if (Array.from(document.getElementsByClassName("contact-number")).length != 0) {
+			console.log(Array.from(document.getElementsByClassName("contact-number")));
 			Array.from(document.getElementsByClassName("contact-number")).forEach(function(numberSpan) {
 				if (numberSpan.textContent == number.textContent) {
-					console.log("..");
 					callName.textContent = numberSpan.parentElement.parentElement.getElementsByClassName("contact-name")[0].textContent;
-					return;
 				} else {
-					console.log("...");
-					callName.textContent = "Unknown";
+					if (callName.textContent == "") {
+						callName.textContent = "Unknown";
+					}
 				}
 			});
 		} else {
