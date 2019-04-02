@@ -1,15 +1,22 @@
+// Grabs all the sections
 let navItems = document.getElementsByClassName("nav-item");
 Array.from(navItems).forEach(function(item) {
+	// Adds a click event listener to them
 	item.addEventListener("click", function() {
+		// Removes the "selected" class from all of them and 
+		// which that all of them are not visible
 		for (let i = 0; i < Array.from(navItems).length; i++) {
 			navItems[i].classList.remove("selected");
 		}
 
+		// Makes the section of the tab that was clicked on visible
 		item.classList.add("selected");
 	});
 });
 
+// An array for storing all the contacts
 let people = [];
+// An array for all the possible avatar colors
 let colors = [
 	"hsla(0, 100%, 50%, 1)", 
 	"hsla(15, 100%, 50%, 1)", 
@@ -36,78 +43,108 @@ let colors = [
 	"hsla(330, 100%, 50%, 1)",
 	"hsla(345, 100%, 50%, 1)"
 ];
+// An array for all the favourited contacts
 let starred = [];
+// An array for all the remove buttons
 let removeButtons = [];
+// A string for check whether the name has already been added to the contacts
 let repeatName = "";
 
+// When you submit the form in the contacts section
 let contactForm = document.getElementById("form-contact");
 contactForm.addEventListener("submit", function(e) {
+	// Don't refresh the page
 	e.preventDefault();
 
+	// Grab all the input for the form field
 	let formFirstName = document.getElementById("form-firstname").value;
 	let formSurname = document.getElementById("form-surname").value;
 	let formNumber = document.getElementById("form-number").value;
 
+	// A container for displaying error messages
 	let errorContainer = document.createElement("div");
 
 	let errorF = document.createElement("span");
 	errorF.className = "error-line";
+	// Checks for error in the first name input
 	errorF.textContent = `${validateFirstName(formFirstName)}`;
 
 	let errorS = document.createElement("span");
 	errorS.className = "error-line";
+	// Checks for errors in the surname input
 	errorS.textContent = `${validateSurname(formSurname)}`;
 
 	let errorN = document.createElement("span");
 	errorN.className = "error-line";
+	// Checks for errors in the contacts section's number input
 	errorN.textContent = `${validateNumber(formNumber)}`;
 
 	let errorFS = document.createElement("span");
 	errorFS.className = "error-line";
+	// Checks if the first name, surname combination already exists
 	if (repeatName.length == 2) {
 		errorFS.textContent = "First name and surname combination already exists";
 	}
 
+	// After that check reset this variable to an empty string so it can be used again
 	repeatName = "";
 
+	// Add all error elements to the error container
 	errorContainer.appendChild(errorF);
 	errorContainer.appendChild(errorS);
 	errorContainer.appendChild(errorN);
 
+	// If there were any errors...
 	if (errorContainer.textContent.length) {
+		// Display the error box
 		error(errorContainer);
+		// Do not submit the form
 		return false;
 	}
 
+	// An element for holding contact info
 	let contact = document.createElement("div");
 	contact.className = "contact";
 
+	// A contact's avatar
 	let contactAvatar = document.createElement("span");
 	contactAvatar.className = "contact-avatar";
 	contactAvatar.style.backgroundColor = colors[Math.floor(Math.random() * 24)];
 
+	// An element for holding a contacts name and number info
 	let contactNameNumber = document.createElement("span");
 
+	// A contact's name
 	let contactName = document.createElement("span");
 	contactName.className = "contact-name";
 	contactName.textContent = `${formFirstName} ${formSurname}`;
 
+	// A contact's number
 	let contactNumber = document.createElement("span");
 	contactNumber.className = "contact-number";
 	contactNumber.textContent = `${formNumber}`;
 
+	// Add the name and number to that element
 	contactNameNumber.appendChild(contactName);
 	contactNameNumber.appendChild(contactNumber);
 
+	// A contact's star element
 	let contactStar = document.createElement("span");
+	// By default the star is black
 	contactStar.className = "contact-star contact-star-black";
+	// Adds the star
 	contactStar.textContent = "\u2605";
+	// When a contact's star element is clicked
 	contactStar.addEventListener("click", function() {
+		// If the star is black
 		if (Array.from(this.classList).indexOf("contact-star-black") != -1) {
 			this.classList.remove("contact-star-black");
+			// Make it yellow
 			this.classList.add("contact-star-yellow");
+			// Add the star's contact to array of starred elements
 			starred.push(this.parentElement);
 
+			// Sort the array by contact names (ascending)
 			starred.sort(function(a, b) {
 				let name1 = a.getElementsByClassName("contact-name")[0].textContent.toLowerCase();
 				let name2 = b.getElementsByClassName("contact-name")[0].textContent.toLowerCase();
@@ -121,24 +158,30 @@ contactForm.addEventListener("submit", function(e) {
 
 			let favourites = document.getElementById("favourites");
 
+			// Clear the favourites section
 			while (favourites.firstChild) {
 				favourites.removeChild(favourites.firstChild);
 			}
 
+			// Readd the starred contacts to the favourites section
 			starred.forEach(function(contact) {
 				let clone = contact.cloneNode(true);
 				clone.removeChild(clone.getElementsByClassName("contact-remove")[0]);
 				favourites.appendChild(clone);
 			});
-		} else {
+		} else { // If the star is yellow
 			this.classList.remove("contact-star-yellow");
+			// Make it black
 			this.classList.add("contact-star-black");
+			// Remove the star's contact from the array of starred elements
 			starred.splice(starred.indexOf(this.parentElement), 1);
 
+			// Clear the favourites section
 			while (favourites.firstChild) {
 				favourites.removeChild(favourites.firstChild);
 			}
 
+			// Readd the starred contacts to the favourites section
 			starred.forEach(function(contact) {
 				let clone = contact.cloneNode(true);
 				clone.removeChild(clone.getElementsByClassName("contact-remove")[0]);
@@ -147,14 +190,20 @@ contactForm.addEventListener("submit", function(e) {
 		}
 	});
 
+	// A contact's remove button element
 	let contactRemoveButton = document.createElement("div");
 	contactRemoveButton.className = "contact-remove";
 	contactRemoveButton.textContent = "\u00D7";
 
+	// Add the element to the remove buttons array
 	removeButtons.push(contactRemoveButton);
+	// For all elements in the array
 	removeButtons.forEach(function(button) {
+		// Add a click event listener
 		button.addEventListener("click", function() {
+			// Get the button's parent element
 			let parent = button.parentElement;
+			// If the parent element has been starred...
 			if (Array.from(parent.getElementsByClassName("contact-star")[0].classList).indexOf("contact-star-yellow") != -1) {
 				// let errorContainer = document.createElement("div");
 				// let errorMessage = document.createElement("span");
@@ -171,10 +220,11 @@ contactForm.addEventListener("submit", function(e) {
 				// }
 
 				// error(errorContainer);
-			} else {
+			} else { // If it has not been starred...
 				let grandParent = button.parentElement.parentElement;
+				// Remove the parent from the list of contacts
 				grandParent.removeChild(parent);
-
+				// Remove the element from the array containing the contacts
 				people.splice(people.indexOf(parent), 1);
 			}
 
@@ -204,13 +254,16 @@ contactForm.addEventListener("submit", function(e) {
 		});
 	});
 
+	// Add the avatar, name, number, star and remove button to the contact
 	contact.appendChild(contactAvatar);
 	contact.appendChild(contactNameNumber);
 	contact.appendChild(contactStar);
 	contact.appendChild(contactRemoveButton);
 
+	// Add the contact to the array of contacts
 	people.push(contact);
 
+	// Sort the array of contacts in alphaetical order (ascending)
 	people.sort(function(a, b) {
 		let name1 = a.getElementsByClassName("contact-name")[0].textContent.toLowerCase();
 		let name2 = b.getElementsByClassName("contact-name")[0].textContent.toLowerCase();
@@ -223,23 +276,28 @@ contactForm.addEventListener("submit", function(e) {
 	});
 
 	let contacts = document.getElementsByClassName("contact");
+	// Remove all contacts from the contacts section
 	Array.from(contacts).forEach(function(contact) {
 		contact.parentElement.removeChild(contact);
 	});
 
+	// Readd all contacts to the contacts section
 	people.forEach(function(person) {
 		let contacts = document.getElementById("contacts");
 		contacts.appendChild(person);
 	});
 
 	let form = document.getElementById("form-contact");
+	// Clear the form field
 	form.reset();
 
+	// Remove the contacts section's input element's erroneous input styling
 	document.getElementById("form-firstname").classList.remove("input-valid");
 	document.getElementById("form-surname").classList.remove("input-valid");
 	document.getElementById("form-number").classList.remove("input-valid");
 });
 
+// // Logic for closing the dialler pad
 // let diallerPad = document.getElementById("dialler-pad");
 // let downChevron = document.getElementById("dialler-pad-close");
 // downChevron.addEventListener("click", function() {
@@ -252,66 +310,76 @@ contactForm.addEventListener("submit", function(e) {
 // 	}
 // });
 
+// Get all the input elements in the contacts section
 let firstNameInput = document.getElementById("form-firstname");
 let surnameInput = document.getElementById("form-surname");
 let numberInput = document.getElementById("form-number");
 
+// When the user's finger has been lifted off a key when focused on this element...
 firstNameInput.addEventListener("keyup", function() {
-	if (this.value.trim() === "") {
+	// Add erroneous input styling...
+	if (this.value.trim() === "") { // If no value was entered
 		this.classList.remove("input-valid");
 		this.classList.add("input-invalid");
-	} else if (/\s/.test(this.value)) {
+	} else if (/\s/.test(this.value)) { // If the value entered has whitespace
 		this.classList.remove("input-valid");
 		this.classList.add("input-invalid");
-	} else if (this.value.trim().length < 2) {
+	} else if (this.value.trim().length < 2) { // If the value entered is less than two characters long
 		this.classList.remove("input-valid");
 		this.classList.add("input-invalid");
-	} else if (/[^a-zA-Z0-9-]/.test(this.value)) {
+	} else if (/[^a-zA-Z0-9-]/.test(this.value)) { // If the value entered has a character that is not a letter, number or hyphen
 		this.classList.remove("input-valid");
 		this.classList.add("input-invalid");
-	} else if (!/[a-z]/.test(this.value) && !/[A-Z]/.test(this.value)) {
+	} else if (!/[a-z]/.test(this.value) && !/[A-Z]/.test(this.value)) { // If the value entered does not contain a letter
 		this.classList.remove("input-valid");
 		this.classList.add("input-invalid");
-	} else {
+	} else { // Otherwise...
 		this.classList.remove("input-invalid");
+		// Add valid input styling
 		this.classList.add("input-valid");
 	}
 });
 
+// When the user's finger has been lifted off a key when focused on this element...
 surnameInput.addEventListener("keyup", function() {
-	if (this.value.trim() === "") {
+	// Add erroneous input styling...
+	if (this.value.trim() === "") { // If no value was entered
 		this.classList.remove("input-valid");
 		this.classList.add("input-invalid");
-	} else if (/\s/.test(this.value)) {
+	} else if (/\s/.test(this.value)) { // If the value entered has whitespace
 		this.classList.remove("input-valid");
 		this.classList.add("input-invalid");
-	} else if (this.value.trim().length < 2) {
+	} else if (this.value.trim().length < 2) { // If the value entered is less than two characters long
 		this.classList.remove("input-valid");
 		this.classList.add("input-invalid");
-	} else if (/[^a-zA-Z0-9-]/.test(this.value)) {
+	} else if (/[^a-zA-Z0-9-]/.test(this.value)) { // If the value entered has a character that is not a letter, number or hyphen
 		this.classList.remove("input-valid");
 		this.classList.add("input-invalid");
-	} else if (!/[a-z]/.test(this.value) && !/[A-Z]/.test(this.value)) {
+	} else if (!/[a-z]/.test(this.value) && !/[A-Z]/.test(this.value)) { // If the value entered does not contain a letter
 		this.classList.remove("input-valid");
 		this.classList.add("input-invalid");
-	} else {
+	} else { // Otherwise
 		this.classList.remove("input-invalid");
+		// Add valid input styling
 		this.classList.add("input-valid");
 	}
 });
 
+// When the user's finger has been lifted off a key when focused on this element...
 numberInput.addEventListener("keyup", function() {
-	if (this.value.trim() === "") {
+	// Add erroneous input styling...
+	if (this.value.trim() === "") { // If no value was entered
 		this.classList.remove("input-valid");
 		this.classList.add("input-invalid");
-	} else if (/[^\d]/.test(this.value)) {
+	} else if (/[^\d]/.test(this.value)) { // If the value is not number
 		this.classList.remove("input-valid");
 		this.classList.add("input-invalid");
-	} else if (this.value.trim().length < 2 || this.value.trim().length > 13) {
+	} else if (this.value.trim().length < 2 || this.value.trim().length > 13) { // If the value if less than  2 characters long or more than 13 characters long
 		this.classList.remove("input-valid");
 		this.classList.add("input-invalid");
-	} else {
+	} else { // Otherwise...
 		this.classList.remove("input-invalid");
+		// Add valid input styling
 		this.classList.add("input-valid");
 	}
 });
