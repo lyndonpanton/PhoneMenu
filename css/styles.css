@@ -47,6 +47,7 @@ html, body {
 .contact-number {
 	display: block;
 	text-align: center;
+	color: #444444;
 }
 
 .contact-remove {
@@ -111,6 +112,7 @@ html, body {
 
 .call-info-name-number {
 	display: block;
+	color: #444444;
 }
 
 .call-info-number {
