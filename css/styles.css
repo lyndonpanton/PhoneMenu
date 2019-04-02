@@ -19,9 +19,6 @@ html, body {
 	display: flex;
 	margin-top: 5px;
 	flex-direction: row;
-	/* Later try to get the avatar to the right, 
-	the name/number to the right 
-	and the call date/time to the very left */
 	justify-content: space-between;
 	height: 40px;
 	border-bottom: 1px #EDEDED solid;
@@ -78,9 +75,6 @@ html, body {
 .call-info {
 	display: flex;
 	flex-direction: row;
-	/* Later try to get the avatar to the right, 
-	the name/number to the right 
-	and the call date/time to the very left */
 	justify-content: space-between;
 	margin-top: 5px;
 	border-bottom: 1px #EDEDED solid;
@@ -153,10 +147,6 @@ html, body {
 
 .input-valid {
 	border-bottom-color: #00FF00;
-}
-
-.nav-item {
-	/*list-style-type: none;*/
 }
 
 .pad {
