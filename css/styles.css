@@ -208,6 +208,7 @@ html, body {
 	height: 83%;
 	max-height: 83%;
 	margin-top: 3px;
+	overflow-y: scroll;
 	background-color: #FCFCFC;
 }
 
@@ -216,6 +217,7 @@ html, body {
 	height: 80%;
 	max-height: 80%;
 	margin-top: -2%;
+	overflow-y: scroll;
 	background-color: #FFFFFF;
 }
 
@@ -298,6 +300,7 @@ html, body {
 	height: 83%;
 	max-height: 83%;
 	margin-top: 3%;
+	overflow-y: scroll;
 	background-color: #FFFFFF;
 }
 
