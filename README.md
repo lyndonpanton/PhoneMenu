@@ -28,7 +28,6 @@
 	1. Getting error: "Uncaught Type: Cannot read property 'removeChild' of null" when I try to remove a contact
 	2. Error in contact adding logic: If I add a contact with the first name "Alice" and the surname "Bobson" then I add a contact with the first name "Bobson" and the surname "Alice", I cannot the contact "Alice Alice" or "Bobson Bobson"
 	3. Trying to remove a starred contact correctly activates the custom error box for displaying the error but the message is shown for that contact and all contacts added after it
-	4. It was working before the variable name changes in "app.js" but now you can add different contacts with the first name, surname combination
 - Semantic
 	1. When you scroll down the contacts section the input field at the top of the element should always be visible
 	2. The lists of contacts/callees should preferably have the avatar to the very left (done), the name and number to the very left immadiately after the avatar (those are currently in the center/left center) and all other information to the very right (done for the dialler/favourites section, the stars in the contacts section are on the right center)
