@@ -35,6 +35,7 @@
 > 1. If you call a number that does not exist then add that number to the contacts and call it again update the list of callees so that the name of the contact replaces the default "Unknown" for both times the number was called
 > 2. If you click on the down chevron in the dialler section the dialler pad minimizes
 > 3. Add local storage so the list of callees, contacts, favourites etc. remains even once the application is closed
+> 4. Change layout on wider screens so that the tab names on the left taking up the full height and the currently active tabs content shows on the left
 
 ### Preview
 ![Screenshot1](./img/Screenshot1.png)
