@@ -196,64 +196,41 @@ contactForm.addEventListener("submit", function(e) {
 	contactRemoveButton.className = "contact-remove";
 	contactRemoveButton.textContent = "\u00D7";
 
+	// Add a click event listener for this remove button
+	contactRemoveButton.addEventListener("click", function() {
+		// Get the button's parent element
+		let parent = this.parentElement;
+
+		// If the parent element has been starred...
+		if (Array.from(parent.getElementsByClassName("contact-star")[0].classList).indexOf("contact-star-yellow") != -1) {
+			// Make a container for the errors
+			let errorContainer = document.createElement("div");
+			// Make an element for a error text
+			let errorMessage = document.createElement("span");
+			errorMessage.className = "error-line";
+
+			// Add the error text to it
+			errorMessage.textContent = "Starred contacts cannot be deleted";
+
+			// Add the element to the container
+			errorContainer.appendChild(errorMessage);
+
+			// Pass the container to the error function
+			error(errorContainer);
+		} else { // If the parent element has not been starred...
+			// Get the remove button's parent's parent element
+			let grandParent = this.parentElement.parentElement;
+
+			// Remove the remove buttons's parent element from the remove button's parent's parent element
+			grandParent.removeChild(parent);
+
+			// Remove the element from the array of contacts
+			people.splice(people.indexOf(parent), 1);
+		}
+	});
+
 	// Add the element to the remove buttons array
 	removeButtons.push(contactRemoveButton);
-	// For all elements in the array
-	removeButtons.forEach(function(button) {
-		// Add a click event listener
-		button.addEventListener("click", function() {
-			// Get the button's parent element
-			let parent = button.parentElement;
-			// If the parent element has been starred...
-			if (Array.from(parent.getElementsByClassName("contact-star")[0].classList).indexOf("contact-star-yellow") != -1) {
-				// let errorContainer = document.createElement("div");
-				// let errorMessage = document.createElement("span");
-				// errorMessage.className = "error-line";
-
-				// errorMessage.textContent = "Starred contacts cannot be deleted";
-				// console.log(errorContainer);
-				// errorContainer.appendChild(errorMessage);
-
-				// // So the error message only is displayed once,
-				// // rather than once for every contact that has been added
-				// while (errorContainer.firstChild && Array.from(errorContainer.children).length > 1) {
-				// 	errorContainer.removeChild(errorContainer.firstChild);
-				// }
-
-				// error(errorContainer);
-			} else { // If it has not been starred...
-				let grandParent = button.parentElement.parentElement;
-				// Remove the parent from the list of contacts
-				grandParent.removeChild(parent);
-				// Remove the element from the array containing the contacts
-				people.splice(people.indexOf(parent), 1);
-			}
-
-		// 	// Alternative logic: Here you can delete starred contacts and both
-		// 	// that contact and its matching element in the favourites list are removed
-		// 	let parent = button.parentElement;
-		// 	let favourites = document.getElementById("favourites").getElementsByClassName("contact");
-
-		// 	if (Array.from(parent.getElementsByClassName("star")[0].classList).indexOf("star-yellow") != -1) {
-		// 		let parentClone;
-		// 		Array.from(favourites).forEach(function(favourite) {
-		// 			if (favourite.getElementsByClassName("name")[0].textContent == parent.getElementsByClassName("name")[0].textContent) {
-		// 				parentClone = favourite;
-		// 			}
-		// 		});
-
-		// 		let grandParentClone = parentClone.parentElement;
-		// 		grandParentClone.removeChild(parentClone);
-
-		// 		starred.splice(starred.indexOf(parentClone), 1);
-		// 	}
-			
-		// 	let grandParent = parent.parentElement;
-		// 	grandParent.removeChild(parent);
-
-		// 	people.splice(people.indexOf(parent), 1);
-		});
-	});
 
 	// Add the avatar, name, number, star and remove button to the contact
 	contact.appendChild(contactAvatar);
