@@ -195,11 +195,9 @@ html, body {
 }
 
 #contacts {
-	height: 100%;
-	max-height: 100%;
-	margin-top: 3px;
+	height: 97%;
+	max-height: 97%;
 	overflow-y: scroll;
-	background-color: #FCFCFC;
 }
 
 #dialler {
@@ -311,6 +309,12 @@ html, body {
 	border-bottom: 2px #EDEDED solid;
 }
 
+#people {
+	height: 100%;
+	max-height: 100%;
+	background-color: #FCFCFC;
+}
+
 #phone-nav {
 	position: relative;
 	display: flex;
@@ -321,6 +325,7 @@ html, body {
 	margin: 0;
 	z-index: 2;
 	border-top: 2px #DDDDDD solid;
+	background-color: #FFFFFF;
 	font-size: 40px;
 	color: #888888;
 }
