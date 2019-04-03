@@ -441,7 +441,7 @@ function validateNumber(n) {
 }
 
 const dialler = document.getElementById("dialler");
-const contacts = document.getElementById("contacts");
+const contacts = document.getElementById("people");
 const favourites = document.getElementById("favourites");
 
 const tabs = document.getElementsByClassName("nav-item");
