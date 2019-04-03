@@ -37,3 +37,14 @@
 > 3. Add local storage so the list of callees, contacts, favourites etc. remains even once the application is closed
 
 ### Preview
+![Screenshot1](./img/Screenshot1.png)
+![Screenshot2](./img/Screenshot2.png)
+![Screenshot3](./img/Screenshot3.png)
+![Screenshot4](./img/Screenshot4.png)
+![Screenshot4](./img/Screenshot4.png)
+![Screenshot5](./img/Screenshot5.png)
+![Screenshot6](./img/Screenshot6.png)
+![Screenshot7](./img/Screenshot7.png)
+![Screenshot8](./img/Screenshot8.png)
+![Screenshot9](./img/Screenshot9.png)
+![Screenshot10](./img/Screenshot10.png)
