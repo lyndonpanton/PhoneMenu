@@ -93,6 +93,7 @@ contactForm.addEventListener("submit", function(e) {
 	errorContainer.appendChild(errorF);
 	errorContainer.appendChild(errorS);
 	errorContainer.appendChild(errorN);
+	errorContainer.appendChild(errorFS);
 
 	// If there were any errors...
 	if (errorContainer.textContent.length) {
