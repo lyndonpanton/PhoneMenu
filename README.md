@@ -27,8 +27,13 @@
 - Logical
 	1. Error in contact adding logic: If I add a contact with the first name "Alice" and the surname "Bobson" then I add a contact with the first name "Bobson" and the surname "Alice", I cannot the contact "Alice Alice" or "Bobson Bobson"
 - Semantic
-	2. The lists of contacts/callees should preferably have the avatar to the very left (done), the name and number to the very left immadiately after the avatar (those are currently in the center/left center) and all other information to the very right (done for the dialler/favourites section, the stars in the contacts section are on the right center)
+	1. The lists of contacts/callees should preferably have the avatar to the very left (done), the name and number to the very left immadiately after the avatar (those are currently in the center/left center) and all other information to the very right (done for the dialler/favourites section, the stars in the contacts section are on the right center)
 - Syntax
 	- N/A
+
+### Extensions
+> 1. If you call a number that does not exist then add that number to the contacts and call it again update the list of callees so that the name of the contact replaces the default "Unknown" for both times the number was called
+> 2. If you click on the down chevron in the dialler section the dialler pad minimizes
+> 3. Add local storage so the list of callees, contacts, favourites etc. remains even once the application is closed
 
 ### Preview
