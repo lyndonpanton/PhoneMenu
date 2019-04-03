@@ -27,7 +27,6 @@
 - Logical
 	1. Error in contact adding logic: If I add a contact with the first name "Alice" and the surname "Bobson" then I add a contact with the first name "Bobson" and the surname "Alice", I cannot the contact "Alice Alice" or "Bobson Bobson"
 - Semantic
-	1. When you scroll down the contacts section the input field at the top of the element should always be visible
 	2. The lists of contacts/callees should preferably have the avatar to the very left (done), the name and number to the very left immadiately after the avatar (those are currently in the center/left center) and all other information to the very right (done for the dialler/favourites section, the stars in the contacts section are on the right center)
 - Syntax
 	- N/A
